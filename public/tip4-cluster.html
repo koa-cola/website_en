@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charSet='utf-8' />
+  <title>ko-cola - cluster集群模式</title>
+  <link href='/doc/css/docs.css' rel='stylesheet'>
+  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <script>
+    window.onunload = function(){
+      var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
+      document.cookie = 'scollTop=' + scollTop;
+    }
+    window.onload = function(){
+      var scrollTop = /scollTop=(\d+)/.test(document.cookie) && RegExp.$1;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='scroll'
+      document.getElementsByClassName('menu-nav')[0].scrollTop = scrollTop || 0;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='hidden'
+    }
+  </script>
+</head>
+<body>
+  <div class='menu'>
+    <div class='logo'>
+      <a href="https://www.github.com/hcnode/koa-cola"><img src="/doc/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
+    </div>
+    <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
+      
+        <ul class='nav'>
+          <span>介绍</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/index.html'>koa-cola是什么?</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/ssr.html'>SSR和SPA</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/compare-next.html'>对比next.js</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/d-mvc.html'>decorator的mvc开发模式</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>使用方法</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/installation.html'>如何使用</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/cli.html'>Cli命令</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>在线演示</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Tips</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip2-redux.html'>redux-connect组件的redux坑</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip4-cluster.html' class='active'>cluster集群模式</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip5-debug.html'>调试</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip6-compile.html'>代码编译</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>目录结构</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                <a href='/doc/api.html' style="padding:0px">api</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-controllers.html'>controllers</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-models.html'>models</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-schemas.html'>schemas</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-responses.html'>responses</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/config.html'>config</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/public.html'>public</a>
+              
+              </li>
+            
+              <li>
+              
+                <a href='/doc/views.html' style="padding:0px">views</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-pages.html'>pages</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-app.html'>app.tsx</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-components.html'>components</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+    </nav>
+  </div>
+  <div class='page'>
+    <div class='page-content'>
+      <h1>cluster集群模式</h1>
+      <div style="
+          float: right;
+          top: -60px;
+          position: relative;
+          margin-right: 10px;
+      "><a href="https://github.com/koa-cola/website/blob/master/source/tip4-cluster.md">修改</a></div>
+      <p>如果你想使用cluster模式，koa-cola提供了pm2的配置文件，使用cli新建项目时候会生成这个配置文件，启动方式使用：<code>pm2 start pm2.config.js</code></p>
+
+    </div>
+  </div>
+  <div class='switch-page'>
+    
+      <a class='previous' href='/doc/tip3-inject-global.html'>Previous</a>
+    
+    
+      <a class='next' href='/doc/tip5-debug.html'>Next</a>
+    
+  </div>
+</body>
+</html>

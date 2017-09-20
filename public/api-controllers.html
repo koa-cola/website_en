@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charSet='utf-8' />
+  <title>ko-cola - controllers</title>
+  <link href='/doc/css/docs.css' rel='stylesheet'>
+  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <script>
+    window.onunload = function(){
+      var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
+      document.cookie = 'scollTop=' + scollTop;
+    }
+    window.onload = function(){
+      var scrollTop = /scollTop=(\d+)/.test(document.cookie) && RegExp.$1;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='scroll'
+      document.getElementsByClassName('menu-nav')[0].scrollTop = scrollTop || 0;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='hidden'
+    }
+  </script>
+</head>
+<body>
+  <div class='menu'>
+    <div class='logo'>
+      <a href="https://www.github.com/hcnode/koa-cola"><img src="/doc/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
+    </div>
+    <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
+      
+        <ul class='nav'>
+          <span>介绍</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/index.html'>koa-cola是什么?</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/ssr.html'>SSR和SPA</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/compare-next.html'>对比next.js</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/d-mvc.html'>decorator的mvc开发模式</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>使用方法</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/installation.html'>如何使用</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/cli.html'>Cli命令</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>在线演示</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Tips</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip2-redux.html'>redux-connect组件的redux坑</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip4-cluster.html'>cluster集群模式</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip5-debug.html'>调试</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip6-compile.html'>代码编译</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>目录结构</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                <a href='/doc/api.html' style="padding:0px">api</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-controllers.html' class='active'>controllers</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-models.html'>models</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-schemas.html'>schemas</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-responses.html'>responses</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/config.html'>config</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/public.html'>public</a>
+              
+              </li>
+            
+              <li>
+              
+                <a href='/doc/views.html' style="padding:0px">views</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-pages.html'>pages</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-app.html'>app.tsx</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-components.html'>components</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+    </nav>
+  </div>
+  <div class='page'>
+    <div class='page-content'>
+      <h1>controllers</h1>
+      <div style="
+          float: right;
+          top: -60px;
+          position: relative;
+          margin-right: 10px;
+      "><a href="https://github.com/koa-cola/website/blob/master/source/api-controllers.md">修改</a></div>
+      <p>controller类保存的目录，controller类必须是基于<code>require('koa-cola/dist/client').Decorators.controller</code>的装饰器（decorator），使用装饰器可以定义路由router和view等信息，你可以根据不同的业务需求设计不同的controller。</p>
+<h2>提供api接口的controller</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; Controller, Get, Post, Body, Ctx,  Response &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/dist/client'</span>).Decorators.controller;</div><div class="line"></div><div class="line">@Controller(<span class="string">''</span>)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123;</div><div class="line">  @Get(<span class="string">'/todo/list'</span>)</div><div class="line">  <span class="keyword">async</span> getTodoList() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">await</span> app.models.todo.find(&#123;&#125;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  </div><div class="line">  @Post(<span class="string">'/todo/save'</span>)</div><div class="line">  <span class="keyword">async</span> saveTodo(@Body() body) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">await</span> app.models.todo.save(body);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2>page view的controller</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; Controller, Get, Post, Body, Ctx,  Response &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/dist/client'</span>).Decorators.controller;</div><div class="line"></div><div class="line">@Controller(<span class="string">''</span>)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123;</div><div class="line">  @Get(<span class="string">'/index'</span>)</div><div class="line">  <span class="keyword">async</span> index() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        list : <span class="keyword">await</span> app.models.todo.find(&#123;&#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>index的page类(在目录views/pages下)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Index</span>(<span class="params">&#123;ctrl : &#123;list&#125;&#125;</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> &lt;div&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">      &#123;</div><div class="line">          list.map(item =&gt; &lt;li&gt;&#123;item.name&#125;&lt;/li&gt;)</div><div class="line">      &#125;</div><div class="line">    &lt;/ul&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>koa-cola提供一些比较好用的装饰器。</p>
+<h3>可以通过Response装饰器返回固定数据格式</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">返回格式:</span></div><div class="line"><span class="comment">[todoItem, ...]</span></div><div class="line"><span class="comment">*/</span></div><div class="line">@Get(<span class="string">'/todo/list'</span>)</div><div class="line"><span class="keyword">async</span> getTodoList() &#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">await</span> app.models.todo.find(&#123;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用Response装饰器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Ok = <span class="function"><span class="keyword">function</span> <span class="title">Ok</span>(<span class="params">ctx, data</span>)</span>&#123;</div><div class="line">    ctx.status = <span class="number">200</span>;</div><div class="line">    <span class="keyword">if</span>(data)&#123;</div><div class="line">        ctx.body = &#123;</div><div class="line">            code : <span class="number">200</span>,</div><div class="line">            result : data</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">返回格式:</span></div><div class="line"><span class="comment">&#123;</span></div><div class="line"><span class="comment">    code : 200,</span></div><div class="line"><span class="comment">    result : [todoItem, ...]</span></div><div class="line"><span class="comment">&#125;</span></div><div class="line"><span class="comment">*/</span></div><div class="line">@Get(<span class="string">'/todo/list'</span>)</div><div class="line">@Response(Ok)</div><div class="line"><span class="keyword">async</span> getTodoList() &#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">await</span> app.models.todo.find(&#123;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3>使用Use装饰器验证请求</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isLogin</span>(<span class="params">ctx, next</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(ctx.state.user)&#123;</div><div class="line">        <span class="keyword">await</span> next();</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        ctx.throw(<span class="number">401</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">...</div><div class="line">  <span class="comment">// 验证用户是否登录，如果没有则返回401</span></div><div class="line">  @Get(<span class="string">'/todo/list'</span>)</div><div class="line">  @Response(Ok)</div><div class="line">  @Use(isLogin)</div><div class="line">  <span class="keyword">async</span> getTodoList() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">await</span> app.models.todo.find(&#123;&#125;);</div><div class="line">  &#125;</div><div class="line">...</div></pre></td></tr></table></figure>
+    </div>
+  </div>
+  <div class='switch-page'>
+    
+    
+      <a class='next' href='/doc/api-models.html'>Next</a>
+    
+  </div>
+</body>
+</html>

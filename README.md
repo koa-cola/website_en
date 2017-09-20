@@ -1,0 +1,1 @@
+run `npm run deploy` after you update document, this would trigger koa-cola.com to update the document

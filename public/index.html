@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charSet='utf-8' />
+  <title>ko-cola - koa-cola是什么?</title>
+  <link href='/doc/css/docs.css' rel='stylesheet'>
+  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <script>
+    window.onunload = function(){
+      var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
+      document.cookie = 'scollTop=' + scollTop;
+    }
+    window.onload = function(){
+      var scrollTop = /scollTop=(\d+)/.test(document.cookie) && RegExp.$1;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='scroll'
+      document.getElementsByClassName('menu-nav')[0].scrollTop = scrollTop || 0;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='hidden'
+    }
+  </script>
+</head>
+<body>
+  <div class='menu'>
+    <div class='logo'>
+      <a href="https://www.github.com/hcnode/koa-cola"><img src="/doc/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
+    </div>
+    <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
+      
+        <ul class='nav'>
+          <span>介绍</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/index.html' class='active'>koa-cola是什么?</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/ssr.html'>SSR和SPA</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/compare-next.html'>对比next.js</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/d-mvc.html'>decorator的mvc开发模式</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>使用方法</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/installation.html'>如何使用</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/cli.html'>Cli命令</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>在线演示</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Tips</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip2-redux.html'>redux-connect组件的redux坑</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip4-cluster.html'>cluster集群模式</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip5-debug.html'>调试</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip6-compile.html'>代码编译</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>目录结构</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                <a href='/doc/api.html' style="padding:0px">api</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-controllers.html'>controllers</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-models.html'>models</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-schemas.html'>schemas</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-responses.html'>responses</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/config.html'>config</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/public.html'>public</a>
+              
+              </li>
+            
+              <li>
+              
+                <a href='/doc/views.html' style="padding:0px">views</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-pages.html'>pages</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-app.html'>app.tsx</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-components.html'>components</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+    </nav>
+  </div>
+  <div class='page'>
+    <div class='page-content'>
+      <h1>koa-cola是什么?</h1>
+      <div style="
+          float: right;
+          top: -60px;
+          position: relative;
+          margin-right: 10px;
+      "><a href="https://github.com/koa-cola/website/blob/master/source/index.md">修改</a></div>
+      <p>koa-cola是一个基于koa和react的服务器端SSR(server side render)和浏览器端的SPA(single page application)的web前后端全栈应用框架。</p>
+<p>koa-cola使用typescript开发，使用d-mvc（es7 decorator风格的mvc）开发模式。另外koa-cola大量使用universal (&quot;isomorphic&quot;) 开发模式，比如react技术栈完全前后端universal（server端和client端均可以使用同一套component、react-redux、react-router）。</p>
+<p>koa-cola的开发风格受<a href="http://sailsjs.com/" target="_blank" rel="external">sails</a>影响，之前使用过sails开发过大型的web应用，深受其<a href="https://en.wikipedia.org/wiki/Convention_over_configuration" target="_blank" rel="external">约定优先配置</a>的开发模式影响。</p>
+<ul>
+<li>SSR+SPA的完整方案，只需要一份react代码便可以实现：服务器端渲染＋浏览器端bundle实现的交互</li>
+<li>使用koa作为web服务（使用node8可以使用最新的v8高性能原生使用async/await）</li>
+<li>使用typescript开发</li>
+<li>使用完整的react技术栈(包括react-router和react-redux)</li>
+<li>react相关代码前后端复用(包括component渲染、react-router和react-redux)</li>
+</ul>
+
+    </div>
+  </div>
+  <div class='switch-page'>
+    
+    
+      <a class='next' href='/doc/ssr.html'>Next</a>
+    
+  </div>
+</body>
+</html>

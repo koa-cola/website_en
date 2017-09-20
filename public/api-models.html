@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charSet='utf-8' />
+  <title>ko-cola - models</title>
+  <link href='/doc/css/docs.css' rel='stylesheet'>
+  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <script>
+    window.onunload = function(){
+      var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
+      document.cookie = 'scollTop=' + scollTop;
+    }
+    window.onload = function(){
+      var scrollTop = /scollTop=(\d+)/.test(document.cookie) && RegExp.$1;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='scroll'
+      document.getElementsByClassName('menu-nav')[0].scrollTop = scrollTop || 0;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='hidden'
+    }
+  </script>
+</head>
+<body>
+  <div class='menu'>
+    <div class='logo'>
+      <a href="https://www.github.com/hcnode/koa-cola"><img src="/doc/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
+    </div>
+    <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
+      
+        <ul class='nav'>
+          <span>介绍</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/index.html'>koa-cola是什么?</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/ssr.html'>SSR和SPA</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/compare-next.html'>对比next.js</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/d-mvc.html'>decorator的mvc开发模式</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>使用方法</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/installation.html'>如何使用</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/cli.html'>Cli命令</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>在线演示</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Tips</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip2-redux.html'>redux-connect组件的redux坑</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip4-cluster.html'>cluster集群模式</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip5-debug.html'>调试</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/tip6-compile.html'>代码编译</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>目录结构</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                <a href='/doc/api.html' style="padding:0px">api</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-controllers.html'>controllers</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-models.html' class='active'>models</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-schemas.html'>schemas</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/api-responses.html'>responses</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/config.html'>config</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/doc/public.html'>public</a>
+              
+              </li>
+            
+              <li>
+              
+                <a href='/doc/views.html' style="padding:0px">views</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-pages.html'>pages</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-app.html'>app.tsx</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/doc/views-components.html'>components</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+    </nav>
+  </div>
+  <div class='page'>
+    <div class='page-content'>
+      <h1>models</h1>
+      <div style="
+          float: right;
+          top: -60px;
+          position: relative;
+          margin-right: 10px;
+      "><a href="https://github.com/koa-cola/website/blob/master/source/api-models.md">修改</a></div>
+      <p>保存model对象的目录，在运行时可以使用<code>app.models.todos</code>获取model对象，可以使用任何ORM或者ODM模型库，只要export出该对象就可以了。</p>
+<p>比如使用mongoose：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;model&#125; <span class="keyword">from</span> <span class="string">'mongoose-decorators'</span>;</div><div class="line"><span class="keyword">const</span> todoSchema = <span class="keyword">new</span> app.mongoose.Schema(&#123;</div><div class="line">    name : <span class="built_in">String</span>,</div><div class="line">    completed : <span class="built_in">Boolean</span></div><div class="line">&#125;)</div><div class="line">@model(todoSchema)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">todos</span> </span>&#123;&#125;</div></pre></td></tr></table></figure>
+<p>除了使用model装饰器，你还可以使用(mongoose-decorators)[https://github.com/aksyonov/mongoose-decorators]的其他装饰器。</p>
+<p>或者你也可以不使用装饰器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> app.mongoose.model(<span class="string">'todos'</span>, <span class="keyword">new</span> app.mongoose.Schema(&#123;</div><div class="line">    name : <span class="built_in">String</span>,</div><div class="line">    completed : <span class="built_in">Boolean</span></div><div class="line">&#125;))</div></pre></td></tr></table></figure>
+    </div>
+  </div>
+  <div class='switch-page'>
+    
+      <a class='previous' href='/doc/api-controllers.html'>Previous</a>
+    
+    
+      <a class='next' href='/doc/api-schemas.html'>Next</a>
+    
+  </div>
+</body>
+</html>
