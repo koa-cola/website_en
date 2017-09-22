@@ -14,7 +14,7 @@ koa-cola可以使用es7的decorator装饰器开发模式来写mvc，controller�
 ```javascript
 const { 
     Controller, Get, Use, Param, Body, Delete, Put, Post, QueryParam, View, Ctx, Response 
-} = require('koa-cola').Decorators.controller;
+} = require('koa-cola/client');
 import Ok from '../responses/ok';
 
 @Controller('') 
@@ -96,38 +96,37 @@ view 层可以是简单的`React.Component`或者是 stateless 的函数组件�
     )(Index)
 ```
 
-#### redux-connect的decorator
-使用这种方式的话，需要注意两点：
-* redux的`reducer`需要使用装饰器`colaReducer`
-* 如果有子组件也是使用`redux-connect`封装，则需要使用装饰器`include`
-* 以上两点可以参考 todolist 的 [colastyleDemo代码](https://github.com/koa-cola/todolist/blob/25e4e3420f656de4aeab064e3a254b056a834003/views/pages/colastyleDemo.tsx#L45)
+#### Cola 装饰器组件
+使用Cola装饰器来封装基于react-redux的组件
+
+如果有子组件也是使用`redux-connect`封装，则需要使用装饰器`include`
+
+可以参考 todolist 的 [colastyleDemo代码](https://github.com/koa-cola/todolist/blob/25e4e3420f656de4aeab064e3a254b056a834003/views/pages/colastyleDemo.tsx#L45)
 
 ```javascript
 import AddTodo from '../official-demo/containers/AddTodo';
 import FilterLink from '../official-demo/containers/FilterLink';
 import VisibleTodoList from '../official-demo/containers/VisibleTodoList';
 const {
-  asyncConnect,
-  colaReducer,
+  Cola
   include
-} = require('koa-cola').Decorators.view;
-@asyncConnect([
-  {
-    key: 'todosData',
-    promise: async ({ params, helpers, store: { dispatch } }) => {
-      const api = new GetTodoList({});
-      const data = await api.fetch(helpers.ctx);
-      dispatch({
-        type: 'INIT_TODO',
-        data: data.result.result
-      });
-      return data.result.result;
+} = require('koa-cola/client');
+@Cola({
+    initData : {
+        todosData : async ({ params, helpers, store: { dispatch } }) => {
+            const api = new GetTodoList({});
+            const data = await api.fetch(helpers.ctx);
+            dispatch({
+                type: 'INIT_TODO',
+                data: data.result.result
+            });
+            return data.result.result;
+        }
+    },
+    reducer : {
+        todos,
+        visibilityFilter
     }
-  }
-])
-@colaReducer({
-  todos,
-  visibilityFilter
 })
 @include({ AddTodo, FilterLink, VisibleTodoList })
 class ColastyleDemo extends React.Component<Props, States> {
@@ -149,7 +148,7 @@ koa-cola 渲染页面时，默认会找`views/pages/layout.ts`封装页面的 ht
 import * as React from 'react';
 const {
   header, bundle, doNotUseLayout
-} = require('../../../dist').Decorators.view;
+} = require('koa-cola/client');
 @doNotUseLayout
 @bundle([
   "/bundle.js",

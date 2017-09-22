@@ -5,12 +5,12 @@ title: controllers
 next: api-models.html
 ---
 
-controller类保存的目录，controller类必须是基于`require('koa-cola/dist/client').Decorators.controller`的装饰器（decorator），使用装饰器可以定义路由router和view等信息，你可以根据不同的业务需求设计不同的controller。
+controller类保存的目录，controller类必须是基于`require('koa-cola/client')`的装饰器（decorator），使用装饰器可以定义路由router和view等信息，你可以根据不同的业务需求设计不同的controller。
 
 ## 提供api接口的controller
 
 ```javascript
-const { Controller, Get, Post, Body, Ctx,  Response } = require('koa-cola/dist/client').Decorators.controller;
+const { Controller, Get, Post, Body, Ctx,  Response } = require('koa-cola/client');
 
 @Controller('')
 export default class {
@@ -29,7 +29,7 @@ export default class {
 
 ## page view的controller
 ```javascript
-const { Controller, Get, Post, Body, Ctx,  Response } = require('koa-cola/dist/client').Decorators.controller;
+const { Controller, Get, Post, Body, Ctx,  Response } = require('koa-cola/client');
 
 @Controller('')
 export default class {

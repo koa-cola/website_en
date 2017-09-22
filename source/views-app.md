@@ -21,7 +21,7 @@ const store = ...
 
 如果要使用服务器端的redux初始化数据，你需要正确的创建store：
 ```javascript
-const { ReduxAsyncConnect, asyncConnect, reducer } = require("koa-cola/dist/client").Decorators.view;
+const { ReduxAsyncConnect, asyncConnect, reducer } = require('koa-cola/client');
 // 使用__data 作为redux的初始化数据
 const store = createStore(combineReducers(Object.assign({ reduxAsyncConnect: reducer }, ...custom_reducer))
     , (window as any).__data);

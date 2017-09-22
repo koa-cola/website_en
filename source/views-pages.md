@@ -50,7 +50,7 @@ export default function(html){
 react page组件也支持不使用layout的方式选渲染。
 
 ```javascript
-const {doNotUseLayout} = require('koa-cola/dist/client').Decorators.view;
+const {doNotUseLayout} = require('koa-cola/client');
 @doNotUseLayout
 class Page extends React.Component<Props, States>   {
     ...
@@ -60,7 +60,7 @@ class Page extends React.Component<Props, States>   {
 这种情况，你可以使用自定义header和bundle的装饰器：
 
 ```javascript
-const {header, bundle, doNotUseLayout} = require('koa-cola/dist/client').Decorators.view;
+const {header, bundle, doNotUseLayout} = require('koa-cola/client');
 @doNotUseLayout
 @bundle([
   "/bundle.js",

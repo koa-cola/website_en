@@ -101,20 +101,17 @@ export default connect(
 或者是经过redux-connect封装的react-redux:
 
 ```javascript
-const {
-    asyncConnect,
-} = require('koa-cola').Decorators.view;
+const {Cola} = require('koa-cola/client');
 
-@asyncConnect(
-[{
-    key: 'foo',
-    promise: async ({ params, helpers}) => {
-        return await Promise.resolve('this will go to this.props.some_props')
-    }
-}],
-mapStateToProps,
-mapDispatchToProps
-)
+@Cola({
+    initData : {
+        foo : async ({ params, helpers}) => {
+            return await Promise.resolve('this will go to this.props.some_props')
+        }
+    },
+    mapStateToProps,
+    mapDispatchToProps
+})
 class Index extends React.Component<Props, States>   {
     constructor(props: Props) {
         super(props);
@@ -154,16 +151,15 @@ const data = await api.fetch(helpers.ctx);
 上面代码可以兼容服务器端和客户端，ajax库使用了[axios](https://github.com/mzabriskie/axios)，比如 [todolist demo](https://github.com/koa-cola/todolist) 有个react组件定义：
 
 ```javascript
-@asyncConnect([
-  {
-    key: 'todosData',
-    promise: async ({ params, helpers, store: { dispatch } }) => {
-      const api = new GetTodoList({});
-      const data = await api.fetch(helpers.ctx);
-      return data.result.result;
+@Cola({
+    initData : {
+        todosData : async ({ params, helpers, store: { dispatch } }) => {
+            const api = new GetTodoList({});
+            const data = await api.fetch(helpers.ctx);
+            return data.result.result;
+        }
     }
-  }
-])
+})
 class Page extends React.Component<Props, States> {
   ...
 }

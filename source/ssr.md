@@ -15,14 +15,13 @@ koa-cola是一个包括前后端全栈的框架。
 SSR和SPA各有优缺点，SPA通过浏览器端router控制页面的跳转，交互体验更友好，但是对于搜索引擎不友好，所以支持SSR是无可避免的，对于开发者，开发koa-cola应用，不需要在写代码时候关心这段代码到底是SSR直渲还是SPA的异步，你只需要关心业务逻辑，koa-cola会帮助你解决代码在不同的环境运行。
 
 ```javascript
-@asyncConnect([
-  {
-    key: 'some_data',
-    promise: async ({ params, helpers}) => {
+@Cola({
+  initData : {
+    some_data : async ({ params, helpers}) => {
       return await fetch('/some/data/api');
     }
   }
-])
+})
 class Index extends React.Component<Props, States> {
   constructor(props: Props) {
     super(props);
@@ -35,7 +34,7 @@ class Index extends React.Component<Props, States> {
 }
 export default Index;
 ```
- 上面这段是koa-cola项目里面使用了asyncConnect的装饰器来初始化数据。
+ 上面这段是koa-cola项目里面使用了Cola的装饰器来初始化数据。
  
  * 当刷新页面，需要SSR方式直渲Index页面时，服务器端会通过fetch获取数据，然后再渲染出来html。
  * 当在其他页面点击了<link>的react组件时，浏览器端则会通过router找到这个组件，然后在浏览器端使用fetch方法异步获取数据，然后重新在浏览器端渲染页面，这就是SPA方式。

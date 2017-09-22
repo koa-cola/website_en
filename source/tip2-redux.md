@@ -12,35 +12,35 @@ next: tip3-inject-global.html
 下面例子，定义了初始化的props属性foo，然后mapStateToProps也定义了返回的props.foo的新value，但是，其实dispatch后props.foo还是最开始的"bar"，而不是"bar again"。
 
 ```javascript
-const {asyncConnect, colaReducer, store} = require('koa-cola').Decorators.view;
-@asyncConnect([
-  {
-    key: 'foo',
-    promise: async ({ params, helpers, store: { dispatch } }) => {
-        return await Promise.resolve('bar');
-    }
-  }
-], // mapStateToProps
-({ fooState }) => {
-    return {
-        foo : fooState
-    };
-}, dispatch => {
-    return {
-        changeFoo: () => {
-            dispatch({
-                type: 'CHANGE_FOO'
-            });
+const {Cola, store} = require('koa-cola/client');
+@Cola({
+    initData : {
+        foo : async ({ params, helpers, store: { dispatch } }) => {
+            return await Promise.resolve('bar');
         }
-    };
-})
-@colaReducer({
-    fooState : (state = '', action) => {
-        switch (action.type) {
-            case 'CHANGE_FOO':
-                return 'bar again';
-            default:
-                return state;
+    },
+    mapStateToProps : ({ fooState }) => {
+        return {
+            foo : fooState
+        };
+    },
+    mapDispatchToProps : dispatch => {
+        return {
+            changeFoo: () => {
+                dispatch({
+                    type: 'CHANGE_FOO'
+                });
+            }
+        };
+    },
+    reducer : {
+        fooState : (state = '', action) => {
+            switch (action.type) {
+                case 'CHANGE_FOO':
+                    return 'bar again';
+                default:
+                    return state;
+            }
         }
     }
 })

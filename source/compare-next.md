@@ -42,17 +42,17 @@ koa-cola则只需要加上decorator "include", 完全支持所有的子组件的
 import * as React from 'react';
 
 const {
-  asyncConnect,
+  Cola,
   include
-} = require('koa-cola').Decorators.view;
-// Child1, Child2 是asyncConnect的组件，并且会进行数据初始化
+} = require('koa-cola/client');
+// Child1, Child2 是react-redux的组件，并且会进行数据初始化
 const Child1 = require('../components/child1').default;
 const Child2 = require('../components/child2').default;
 
 export interface Props {}
 export interface States {}
 
-@asyncConnect([])
+@Cola({})
 @include({
   Child1,
   Child2
