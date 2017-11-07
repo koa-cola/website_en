@@ -1,0 +1,17 @@
+{
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "yaml"
+  ],
+  "spellright.language": "en",
+  "cSpell.enabledLanguageIds": [
+    "json",
+    "markdown",
+    "yaml",
+    "yml"
+  ],
+  "cSpell.enabled": true,
+  "cSpell.language": "en"
+}
