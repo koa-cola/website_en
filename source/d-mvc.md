@@ -56,8 +56,13 @@ export default function Ok(ctx : Koa.Context, data){
 
 ### View
 
-view 层可以是简单的`React.Component`或者是 stateless 的函数组件，也可以是使用 react-redux 封装过的组件，[todolist demo](https://github.com/koa-cola/todolist) 的 view 则使用了[redux-connect](https://github.com/makeomatic/redux-connect) 提供的 decorator (当然你也可以直接用它的 connect 方法)，redux-connect 也是基于 react-redux，以下是 view 层支持的 react 组件类型。
-    
+page的view组件可以使用不同类型的react组件：
+
+* React.Component组件
+* stateless的函数组件
+* react-redux组件
+* koa-cola提供的Cola装饰器组件（基于react-redux的数据初始化组件）
+
 #### React.Component组件
 
 ```javascript
@@ -99,9 +104,7 @@ view 层可以是简单的`React.Component`或者是 stateless 的函数组件�
 #### Cola 装饰器组件
 使用Cola装饰器来封装基于react-redux的组件
 
-如果有子组件也是使用`redux-connect`封装，则需要使用装饰器`include`
-
-可以参考 todolist 的 [colastyleDemo代码](https://github.com/koa-cola/todolist/blob/25e4e3420f656de4aeab064e3a254b056a834003/views/pages/colastyleDemo.tsx#L45)
+如果有子组件也是使用Cola 装饰器封装，则需要使用装饰器`include`
 
 ```javascript
 import AddTodo from '../official-demo/containers/AddTodo';
@@ -111,6 +114,7 @@ const {
   Cola
   include
 } = require('koa-cola/client');
+
 @Cola({
     initData : {
         todosData : async ({ params, helpers, store: { dispatch } }) => {
@@ -142,7 +146,7 @@ export default ColastyleDemo;
 
 #### 自定义 header 和 bundle 方式
 
-koa-cola 渲染页面时，默认会找`views/pages/layout.ts`封装页面的 html，如果没有这个`layout`文件，则直接输出 page 组件返回的 html，如果 view 组件使用了`doNotUseLayout` decorator，则页面不会使用`layout.ts`输出，这时你可以自定义`header`和`bundle`的 decorator。
+koa-cola 渲染页面时，默认会找`views/pages/layout.ts`封装页面的 html，如果没有这个`layout`文件，则直接输出 page 组件返回的 html，如果 view 组件使用了`doNotUseLayout` 装饰器，则页面不会使用`layout.ts`输出，这时你可以自定义`header`和`bundle`装饰器。
 
 ```javascript
 import * as React from 'react';
