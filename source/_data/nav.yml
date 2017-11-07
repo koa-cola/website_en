@@ -1,43 +1,43 @@
-- title: 介绍
+- title: Introduction
   items:
   - id: index
-    title: koa-cola是什么?
+    title: What is koa-cola?
   - id: ssr
-    title: SSR和SPA
+    title: SSR & SPA
   - id: compare-next
-    title: 对比next.js
+    title: Compare with next.js
   - id: universal
-    title: Universal 前后端全栈开发
+    title: Universal developing
   - id: d-mvc
-    title: decorator的mvc开发模式
-- title: 使用方法
+    title: MVC pattern with decorator
+- title: Overview
   items:
   - id: installation
-    title: 如何使用
+    title: Getting Started
   - id: decorators
-    title: 装饰器
+    title: Decorators
   - id: cli
-    title: Cli命令
-- title: 在线演示
+    title: Cli commander
+- title: Online demo
   items:
   - id: demo-todolist
     href: http://www.koa-cola.com:3000  
-    title: todolist例子
+    title: Todolist example
 - title: Tips
   items:
   - id: tip1-react-init
-    title: 初始化react组件数据
+    title: Initialize react component data
   - id: tip2-redux
-    title: Cola装饰器组件的redux坑
+    title: Using redux in Cola
   - id: tip3-inject-global
-    title: Inject global全局注入
+    title: Inject global
   - id: tip4-cluster
-    title: cluster集群模式
+    title: Cluster mode
   - id: tip5-debug
-    title: 调试
+    title: Debugging
   - id: tip6-compile
-    title: 代码编译
-- title: 目录结构
+    title: Compiling
+- title: Project construction
   items:
   - id: api
     title: api
