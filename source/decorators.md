@@ -1,13 +1,14 @@
 ---
 layout: default
 id: decorators
-title: 装饰器
+title: Decorators
 prev: installation.html
 next: cli.html
 ---
 
-### Cola 装饰器
-定义redux数据初始化，react-redux组件的mapStateToProps和mapDispatchToProps定义，和redux的reducer定义，装饰器可以同时支持服务器端和浏览器端。
+### Cola decorator
+<!-- 定义redux数据初始化，react-redux组件的mapStateToProps和mapDispatchToProps定义，和redux的reducer定义，装饰器可以同时支持服务器端和浏览器端。 -->
+`Cola` decorator define redux data initialization, `mapStateToProps` & `mapDispatchToProps` for react-redux components, and reducers for redux. Decorator can support both server-side and browser-side.
 
 ```javascript
 @Cola({
@@ -18,16 +19,16 @@ next: cli.html
   },
   mapStateToProps: state => {
     return {
-      // 返回props
+      // return props
     };
   },
   mapDispatchToProps: dispatch => {
     return {
-      // 返回props
+      // return props
     };
   },
   reducer: {
-    // 这里定义reducer
+    // define reducer here
   }
 })
 class App extends React.Component<Props, States> {
@@ -35,8 +36,10 @@ class App extends React.Component<Props, States> {
 }
 ```
 
-### include装饰器
-定义当前组件使用的子组件，当子组件使用了Cola装饰器进行数据初始化时候，必须使用include装饰器
+### include decorator
+<!-- 定义当前组件使用的子组件，当子组件使用了Cola装饰器进行数据初始化时候，必须使用include装饰器 -->
+`include` decorator is used to mention the sub-components used by the current component.
+When sub-components has data initialization with the `Cola` decorator, we must use `include` decorator on the root-component.
 
 ```javascript
 @Cola({
@@ -91,8 +94,10 @@ class MultiChildren extends React.Component<Props, States> {
 }
 ```
 
-### doNotUseLayout装饰器
-默认page组件会使用views/pages/layout.ts来渲染，如果不使用可以通过定义这个装饰器
+### doNotUseLayout decorator
+
+<!-- 默认page组件会使用views/pages/layout.ts来渲染，如果不使用可以通过定义这个装饰器 -->
+By default, page component will render with `views/pages/layout.ts`, if we don't need that layout, we can be defined with this decorator:
 
 ```javascript
 @doNotUseLayout
@@ -108,8 +113,11 @@ class Page extends React.Component<Props, States>   {
 };
 ```
 
-### header和bundle装饰器
-当使用doNotUseLayout装饰器时，如果需要自定义插入header和js bundle，可以使用这两个装饰器
+### header & bundle decorator
+
+<!-- 当使用doNotUseLayout装饰器时，如果需要自定义插入header和js bundle，可以使用这两个装饰器 -->
+When using `doNotUseLayout` decorator, if you need custom insert header and js bundle, you can use these two decorators.
+
 ```javascript
 @doNotUseLayout
 @bundle([
