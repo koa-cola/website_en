@@ -1,7 +1,7 @@
 ---
 layout: default
 id: compare-next
-title: 对比next.js
+title: Compare with next.js
 prev: ssr.html
 next: universal.html
 ---

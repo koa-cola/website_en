@@ -1,7 +1,7 @@
 ---
 layout: default
 id: ssr
-title: SSR和SPA
+title: SSR & SPA
 prev: index.html
 next: compare-next.html
 ---
