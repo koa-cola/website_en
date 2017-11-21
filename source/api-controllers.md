@@ -7,7 +7,11 @@ next: api-models.html
 
 controller类保存的目录，controller类必须是基于`require('koa-cola/client')`的装饰器（decorator），使用装饰器可以定义路由router和view等信息，你可以根据不同的业务需求设计不同的controller。
 
-## 提供api接口的controller
+The controller directory holds the `controller` class.
+The `controller` class must be based on the `require('koa-cola/client')` decorator.
+Using decorators, we can define the router and view. We can design different controllers according to different production needs.
+
+## Controller that provides api interface
 
 ```javascript
 const { Controller, Get, Post, Body, Ctx,  Response } = require('koa-cola/client');
@@ -27,7 +31,7 @@ export default class {
 }
 ```
 
-## page view的controller
+## Controller in the page's view
 ```javascript
 const { Controller, Get, Post, Body, Ctx,  Response } = require('koa-cola/client');
 
@@ -42,7 +46,7 @@ export default class {
 }
 ```
 
-index的page类(在目录views/pages下)
+index's page class (inside `views/pages` directory)
 
 ```javascript
 import * as React from 'react';
@@ -57,12 +61,14 @@ function Index({ctrl : {list}}){
 }
 ```
 
-koa-cola提供一些比较好用的装饰器。
+koa-cola has provided some nice decorations.
 
-### 可以通过Response装饰器返回固定数据格式
+<!-- ### 可以通过Response装饰器返回固定数据格式 -->
+### Return fixed data format through the Response decorator
+
 ```javascript
   /**
-  返回格式:
+  data format:
   [todoItem, ...]
   */
   @Get('/todo/list')
@@ -71,7 +77,7 @@ koa-cola提供一些比较好用的装饰器。
   }
 ```
 
-使用Response装饰器
+Using Response decorator
 ```javascript
   const Ok = function Ok(ctx, data){
       ctx.status = 200;
@@ -83,7 +89,7 @@ koa-cola提供一些比较好用的装饰器。
       }
   }
   /**
-  返回格式:
+  return data format:
   {
       code : 200,
       result : [todoItem, ...]
@@ -96,7 +102,7 @@ koa-cola提供一些比较好用的装饰器。
   }
 ```
 
-### 使用Use装饰器验证请求
+### Using `Use` decorator to verify request
 
 ```javascript
  function isLogin(ctx, next){
@@ -108,7 +114,7 @@ koa-cola提供一些比较好用的装饰器。
 }
 
 ...
-  // 验证用户是否登录，如果没有则返回401
+  // Verify that the user is logged in, and return 401 if not
   @Get('/todo/list')
   @Response(Ok)
   @Use(isLogin)

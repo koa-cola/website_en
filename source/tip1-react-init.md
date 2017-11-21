@@ -1,24 +1,26 @@
 ---
 layout: default
 id: tip1-react-init
-title: 初始化react组件数据
+title: React component data initialization
 next: tip2-redux.html
 ---
 
-koa-cola提供两种方式初始化react。
+koa-cola provides two ways to initialize react.
 
-## 在controller里面初始化
+## Initialization inside controller
 
-初始化数据，数据将会注入到react组件的props.ctrl，如：this.props.ctrl.foo
+<!-- 初始化数据，数据将会注入到react组件的props.ctrl，如：this.props.ctrl.foo -->
+When initialize data, data will be injected into the react component `props.ctrl`, such as:
 
 ```javascript
 const { Controller, Get, Use, Param, Body, Delete, Put, Post, QueryParam, View, Ctx, Response } = require('koa-cola/client');
 @Controller('') 
 class FooController {
     @Get('/some_page')  
-    @View('some_page') // some_page是普通react组件
+    @View('some_page') // some_page is a common react component
     async some_page (@Ctx() ctx, @QueryParam() param : any) { 
-        // 初始化数据，数据将会注入到react组件的props，如：this.props.ctrl.foo
+        // data will be injected into the react component's props. 
+        // inside the component we can get "foo" by "this.props.ctrl.foo"
         return await Promise.resolve({
             foo : 'bar'
         });
@@ -26,11 +28,11 @@ class FooController {
 }
 ```
 
-## 使用Cola装饰器的组件初始化数据
+## Use Cola decorator's components to initialize data
 ```javascript
 const {Cola} = require('koa-cola/client');
 
-// 变量描述
+// Variable Description
 export interface Props {
     foo: string;   
 }
@@ -54,14 +56,14 @@ class Some_Page extends React.Component<Props, States> {
 export default Some_Page;
 ```
 
-这两种方式的区别是：
+The difference between these two ways is:
 
-第一种方式：
-* 只会在服务器端进行初始化
-* 只支持React.Component和function的react组件
-* 因为只会在服务器端进行初始化，所以可以支持任何获取数据的方式比如数据库获取
+The first way:
+* Will only be initialized on the server side.
+* Only get data inside react component.
+* Because only running on the server side, so it support any access to data such as database access
 
-第二种方式：
-* 服务器端和浏览器端都支持（服务器端就是SSR，浏览器端就是异步获取数据）
-* Cola装饰器的组件
-* 因为服务器端和浏览器端都支持初始化，所以数据的获取必须支持前后端，比如使用axios库
+The second way:
+* Server-side and browser-side supported (server side is SSR, browser side is fetching data)
+* Cola decorator component
+* Because it support both side to run, data acquisition must support server and browser environment. We can use axios to this purpose.

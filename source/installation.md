@@ -1,7 +1,7 @@
 ---
 layout: default
 id: installation
-title: 如何使用
+title: Getting Started
 prev: d-mvc.html
 next: cli.html
 ---
@@ -9,23 +9,25 @@ next: cli.html
 
 <!-- koa-cola支持node.js的版本包括7.6和8，建议使用8，因为8.0使用的最新的v8版本，而且8.0会在[今年10月正式激活LTS](https://github.com/nodejs/LTS)，因为koa-cola的async/await是原生方式使用没有经过transform，所以不支持node7.6以下的node版本。 -->
 
-## 创建项目
+## Create a project
 
-* **安装全局koa-cola, ts-node, typescript**
+* **install global koa-cola, ts-node, typescript**
 `npm i koa-cola ts-node typescript -g` 
 
-* **在当前文件夹创建名字为app的新koa-cola项目，创建完整的目录结构，并自动安装依赖**
+<!-- * **在当前文件夹创建名字为app的新koa-cola项目，创建完整的目录结构，并自动安装依赖** -->
+* **Create a new koa-cola project in the current folder, name `app`. It will automatically create a complete directory structure, and install dependencies**
 `koa-cola new app` 
 
 * **dev的开发模式启动项目，生成 webpack bundle、启动项目、并自动打开浏览器，并自动watch源码，当源码有修改，bundle js和ssr服务器端渲染都会自动重新加载module**
+* **Start the project as development model, generate webpack bundle, start the project, and automatically open the browser, and watch the code changes. When the source has been modified, bundled js and ssr server-side rendering will automatically reload module**
 `cd koa-cola-app`
 `koa-cola dev` 
 
-视频演示：
+Video demo：
 
 <a href="http://www.koa-cola.com/doc/video/koa-cola-dev.mp4" target="_blank"><img src="http://www.koa-cola.com/doc/video/poster.png" width="500" /></a>
 
-### 使用路由装饰器创建路由，并返回json数据
+### Use the route decorator to create route, and return json data
 
 `api/controllers/any_controller.ts`
 
@@ -43,9 +45,9 @@ export default class  {
 }
 ```
 
-### 使用路由装饰器创建路由，并通过react page组件渲染
+### Use the route decorator to create route, and render with the React's pages components.
 
-#### 渲染静态组件
+#### Render static components
 
 `api/controllers/any_controller.ts`
 
@@ -70,7 +72,7 @@ export default function() {
 };
 ```
 
-#### 渲染数据依赖组件方法1
+#### Method to render components with data dependence (1)
 
 `api/controllers/any_controller.ts`
 
@@ -100,7 +102,7 @@ export default function({ctrl : {foo}}) {
 };
 ```
 
-#### 渲染数据依赖组件方法2
+#### Method to render components with data dependence (2)
 
 `api/controllers/any_controller.ts`
 
