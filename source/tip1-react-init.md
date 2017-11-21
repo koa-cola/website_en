@@ -26,7 +26,7 @@ class FooController {
 }
 ```
 
-## 在redux-connect封装的react组件初始化数据
+## 使用Cola装饰器的组件初始化数据
 ```javascript
 const {Cola} = require('koa-cola/client');
 
@@ -58,10 +58,10 @@ export default Some_Page;
 
 第一种方式：
 * 只会在服务器端进行初始化
-* 只支持非react-redux或者redux-connect封装的组件
+* 只支持React.Component和function的react组件
 * 因为只会在服务器端进行初始化，所以可以支持任何获取数据的方式比如数据库获取
 
 第二种方式：
 * 服务器端和浏览器端都支持（服务器端就是SSR，浏览器端就是异步获取数据）
-* redux-connect封装的组件
-* 因为服务器端和浏览器端都支持初始化，所以数据的获取必须前后端Universal，比如使用axios库
+* Cola装饰器的组件
+* 因为服务器端和浏览器端都支持初始化，所以数据的获取必须支持前后端，比如使用axios库

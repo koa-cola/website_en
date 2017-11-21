@@ -98,7 +98,7 @@ export default connect(
 )(Index)
 ```
 
-或者是经过redux-connect封装的react-redux:
+或者是经过Cola装饰器封装的react-redux:
 
 ```javascript
 const {Cola} = require('koa-cola/client');
