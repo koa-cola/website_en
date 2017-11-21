@@ -8,7 +8,7 @@ next: config-env.html
 
 ## global.app.config
 
-通过约定`/config/`一级目录下所有的js文件都会成为 `app.config` 的属性，运行时会被 env 环境对应的`/config/env/`下的js配置覆盖。
+<!-- 通过约定`/config/`一级目录下所有的js文件都会成为 `app.config` 的属性，运行时会被 env 环境对应的`/config/env/`下的js配置覆盖。 -->
 
 	> config
 	    > env

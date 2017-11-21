@@ -6,7 +6,7 @@ prev: api-controllers.html
 next: api-schemas.html
 ---
 
-保存model对象的目录，在运行时可以使用`app.models.todos`获取model对象，可以使用任何ORM或者ODM模型库，只要export出该对象就可以了。
+<!-- 保存model对象的目录，在运行时可以使用`app.models.todos`获取model对象，可以使用任何ORM或者ODM模型库，只要export出该对象就可以了。 -->
 The directory that saves the model. We can get the model using `app.models.todos` at run time.
 We can use any ORM or ODM model library, as long as we export the object.
 
