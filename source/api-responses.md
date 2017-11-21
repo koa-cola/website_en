@@ -6,9 +6,9 @@ prev: api-schemas.html
 next: config.html
 ---
 
-使用responses可以定义固定的接口数据返回格式。
+pre-define the format of router return.
 
-比如普通的返回：
+for example return json contain code 200 and result：
 
 ```javascript
   export default function Ok(ctx, data){
@@ -20,7 +20,7 @@ next: config.html
   }
 ```
 
-或者返回列表：
+or return the format of list data：
 ```javascript
   export default function List(ctx, {data, page, page_count, total_count}){
     ctx.status = 200;

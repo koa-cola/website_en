@@ -10,27 +10,26 @@ koa-cola provides some useful cli commands, include creating a new project, laun
 
 ### Create a koa-cola project
 
-We can create a template project with the folder named `app` in the current directory by running:
+new koa-cola project:
 
 ```shell
 koa-cola new app
 ```
  or 
- ```shell
+```shell
 koa-cola n app
 ```
-after it finish, the project will automatically install dependencies, build bundle, and launch the app.
+the project will install dependencies, build bundle, and launch the app automatically.
 
 ### launch App
 
 <!-- `koa-cola` 在项目目录里面执行，启动项目，node端启动app项目，但是不会build bundle -->
-To start the project, we enter the project directory and run:
+To launch the project:
  ```shell
  koa-cola
  ```
-Then the node side will start app project, but will not build the frontend bundle.
 
-To start as development mode, build webpack bundle, launch project, and open browser automatically:
+To start as development mode, build webpack bundle, launch project, and watch files automatically:
 ```shell
 koa-cola dev
 ```
@@ -41,13 +40,12 @@ To run a build command:
 ```shell
 koa-cola build
 ```
- the build action will automatically find the controller, and through it to find the view, finilly release Provider.
- This Provider is the entry of the webapck build js bundle.
+the build action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.
 
 **Note: This will overwrite your `view/app.tsx`**
 
 <!-- 如果你需要维护你的app.tsx，那么你需要运行webpack命令而不是`koa-cola build` -->
-If we want to maintain the `app.tsx`, we need to run the `webpack` command instead of `koa-cola build`.
+If you want a 'homemade' `app.tsx` , you need to run the `webpack` command instead of `koa-cola build`.
 
 ### Create model schema file
 

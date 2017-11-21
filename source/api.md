@@ -5,20 +5,20 @@ title: api
 next: api-controllers.html
 ---
 
-api目录包含应用的大部分业务逻辑，包括MVC架构中的[controller](/doc/api-controllers.html)和[和model](/doc/api-models.html)。
+folder `api` contain all business logic layer except views, so it contain [controller](/api-controllers.html) and [model](/api-models.html) of MVC architecture.
 
-使用new命令创建出来的脚手架目录里面，api包括：
+the api module of using cli `koa-cola new` command include：
 * controllers
 * models
 * schemas
 * responses
 
-在项目运行时，会将api的这些目录注入到全局app里面，如`app.controllers.IndexController`，可以在需要的时候使用。
+after the application is launched, these api modules will inject into `app` global, so that mean you can get these refer module by calling `app.modulename.xxx` like `app.controllers.IndexController`
 
-注入到app的api目录还包括这些：
+there are other module that you can inject into app global if needed like：
 * policies
 * services
 * managers
 * middlewares
 
-以上这些目录不会出现在默认的项目里面，如果用户创建了，则会注入到app。
+

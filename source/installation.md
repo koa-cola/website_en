@@ -18,16 +18,11 @@ next: cli.html
 * **Create a new koa-cola project in the current folder, name `app`. It will automatically create a complete directory structure, and install dependencies**
 `koa-cola new app` 
 
-* **dev的开发模式启动项目，生成 webpack bundle、启动项目、并自动打开浏览器，并自动watch源码，当源码有修改，bundle js和ssr服务器端渲染都会自动重新加载module**
-* **Start the project as development model, generate webpack bundle, start the project, and automatically open the browser, and watch the code changes. When the source has been modified, bundled js and ssr server-side rendering will automatically reload module**
+* **Start the project as development model, build webpack bundle, launch the project, and open the browser, and watch the specify files changes. When the files are modified, bundled js and ssr server-side rendering will hot reload**
 `cd koa-cola-app`
 `koa-cola dev` 
 
-Video demo：
-
-<a href="http://www.koa-cola.com/doc/video/koa-cola-dev.mp4" target="_blank"><img src="http://www.koa-cola.com/doc/video/poster.png" width="500" /></a>
-
-### Use the route decorator to create route, and return json data
+<!-- ### Use the route decorator to create route, and return json data
 
 `api/controllers/any_controller.ts`
 
@@ -140,5 +135,5 @@ export default class Page extends React.Component<Props, States>   {
     </div>
   }
 };
-```
+``` -->
 
