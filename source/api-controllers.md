@@ -5,15 +5,7 @@ title: controllers
 next: api-models.html
 ---
 
-<<<<<<< HEAD
 The controller directory holds the `controller` class, and the `controller` class define controller by decorator Controller from `require('koa-cola/client')`. and we can define the router and view by decorators as well, so We can design different controllers according to different production needs.
-=======
-<!-- controller类保存的目录，controller类必须是基于`require('koa-cola/client')`的装饰器（decorator），使用装饰器可以定义路由router和view等信息，你可以根据不同的业务需求设计不同的controller。 -->
-
-The controller directory holds the `controller` class.
-The `controller` class must be based on the `require('koa-cola/client')` decorator.
-Using decorators, we can define the router and view. We can design different controllers according to different production needs.
->>>>>>> bc0399daf7e040375965137d33eccedf8be37c62
 
 ## Controller that provides api interface
 
