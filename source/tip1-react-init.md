@@ -5,12 +5,12 @@ title: React component data initialization
 next: tip2-redux.html
 ---
 
-koa-cola provides two ways to initialize react.
+koa-cola provides two ways to initialize react data.
 
 ## Initialization inside controller
 
 <!-- 初始化数据，数据将会注入到react组件的props.ctrl，如：this.props.ctrl.foo -->
-When initialize data, data will be injected into the react component `props.ctrl`, such as:
+When initialize data, data will be injected into the react component `props.ctrl`, like:
 
 ```javascript
 const { Controller, Get, Use, Param, Body, Delete, Put, Post, QueryParam, View, Ctx, Response } = require('koa-cola/client');
@@ -56,14 +56,14 @@ class Some_Page extends React.Component<Props, States> {
 export default Some_Page;
 ```
 
-The difference between these two ways is:
+The difference between these two data-init ways is:
 
 The first way:
 * Will only be initialized on the server side.
 * Only get data inside react component.
-* Because only running on the server side, so it support any access to data such as database access
+* Because only running on the server side, so you can do anything like fetch data from database.
 
 The second way:
 * Server-side and browser-side supported (server side is SSR, browser side is fetching data)
-* Cola decorator component
-* Because it support both side to run, data acquisition must support server and browser environment. We can use axios to this purpose.
+* use Cola decorator component
+* Because it support both side to run, data acquisition must support server and browser environment.
