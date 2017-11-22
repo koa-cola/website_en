@@ -6,7 +6,13 @@ prev: api-controllers.html
 next: api-schemas.html
 ---
 
+<<<<<<< HEAD
 The folder that place the model layer. We can get the model by using `app.models.todos` at run time. any ORM or ODM model library is supported, as long as export the object.
+=======
+<!-- 保存model对象的目录，在运行时可以使用`app.models.todos`获取model对象，可以使用任何ORM或者ODM模型库，只要export出该对象就可以了。 -->
+The directory that saves the model. We can get the model using `app.models.todos` at run time.
+We can use any ORM or ODM model library, as long as we export the object.
+>>>>>>> bc0399daf7e040375965137d33eccedf8be37c62
 
 For example, use mongoose：
 
