@@ -7,10 +7,12 @@ next: d-mvc.html
 ---
 
 <!-- ### 前后端router -->
-### front and back ends router
+### front end and back end router
 
 <!-- 通过controller生成server端的react-router，并且也生成client端的react-redux的Provider(里面还是封装了react-router) -->
-koa-cola auto generate both front and back ends router
+koa-cola auto generate both front end and back ends router
+
+in controller:
 
 ```javascript
 @Controller('') 
@@ -23,7 +25,7 @@ class FooController {
 }
 ```
 <!-- 自动生成的server端的react-router: -->
-It will auto-generated server-side react-router like this:
+react-router will be auto-generated like this:
 
 ```html
 <Router ... >
@@ -32,7 +34,7 @@ It will auto-generated server-side react-router like this:
 ```
 
 <!-- 通过react-router的match到对应的route后，再通过Provider，最终渲染出html： -->
-After react-router match the react component by a specify route, eventually render view html:
+In server side after react-router match the react component by a specify route, eventually render view html:
 
 ```html
 <Provider store={store} key="provider">
@@ -55,51 +57,9 @@ Client-side will auto match the route and component, and auto render in browser.
 <!-- ### 前后端redux -->
 ### front end and back end redux
 
-koa-cola integrates the react-redux.
+koa-cola integrates the react-redux in both sides.
 
-Client-side redux:
-
-<!-- #### controller 返回 props + 普通 react 组件 -->
-#### Controller's data passing to react component
-
-<!-- react组件最终会转换成react-redux组件，在生命周期的render之前，你可以使用redux比如dispatch。 -->
-The react component will eventually convert to react-redux components, which you can use with redux, such as dispatch, before the render of the lifecycle.
-
-Controller create data `foo`:
-
-```javascript
-@Get('/view')
-@View('some_view')
-async view( @Ctx() ctx ) {
-    return await Promise.resolve({
-        foo : 'bar'
-    });
-} 
-```
-
-React component gets controller's data `foo`：
-
-```javascript
-function({ctrl : {foo}}){
-    return <div>{foo}</div>
-}
-```
-
-Or 
-
-```javascript
-class Page extends React.Component<Props, States>   {
-    constructor(props: Props) {
-        super(props);
-    }
-    render() {
-        return <div>{this.props.ctrl.foo}</div>
-    }
-};
-```
-
-<!-- #### 使用react-redux组件，但是无法获得controller返回的props -->
-#### Use react-redux component, ignore the data controller return
+react-redux component:
 
 ```javascript
 import { connect } from 'react-redux'
@@ -113,7 +73,7 @@ export default connect(
 ```
 
 <!-- 或者是经过Cola装饰器封装的react-redux: -->
-Or use the react-redux base on `@Cola` decorator:
+Or use the react-redux base `@Cola` decorator:
 
 ```javascript
 const {Cola} = require('koa-cola/client');
@@ -138,11 +98,9 @@ class Index extends React.Component<Props, States>   {
 export default Index
 ```
 
-<!-- client端的redux -->
-client side redux
 
 <!-- 在client可以使用 上面所有形式的 react组件 的redux数据流开发模式，并且没有server端只能在render前使用的限制，可以在组件的生命周期任何时候使用。 -->
-The client side redux can use the any type of the component that mentioned above, and used in any part of component lifecycle.
+The client side and server side redux can use the any type of the component that mentioned above, and used in any part of component lifecycle.
 
 <!-- 但是client端的redux store会依赖server端， 如果server端的store已经经过一系列的数据流操作，那么将会在render阶段之前的数据保存起来，作为client端react-redux的初始化数据（详细查看[redux的createStore](http://redux.js.org/docs/api/createStore.html)），这样就可以完美地将redux数据流从server端无缝衔接到client端。 -->
 However, the client side of the redux store will depend on the server side, if the store of server side has been running a series of data stream operations, store data will be saved and as the client side react-redux initial data in `createStore`. (See [redux createStore](http://redux.js.org/docs/api/createStore.html) for detail). So this will magically seamlessly connect the redux data stream from the server side to the client side.
