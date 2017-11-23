@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charSet='utf-8' />
-  <title>ko-cola - decorator的mvc开发模式</title>
-  <link href='/doc/css/docs.css' rel='stylesheet'>
-  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <title>ko-cola - MVC pattern with decorator</title>
+  <link href='/css/docs.css' rel='stylesheet'>
+  <link href='/css/github-markdown.css' rel='stylesheet'>
   <script>
     window.onunload = function(){
       var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
@@ -26,36 +26,36 @@
     <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
       
         <ul class='nav'>
-          <span>介绍</span>
+          <span>Introduction</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/index.html'>koa-cola是什么?</a>
+                 <a href='/index.html'>What is koa-cola?</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/ssr.html'>SSR和SPA</a>
+                 <a href='/ssr.html'>SSR & SPA</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/compare-next.html'>对比next.js</a>
+                 <a href='/compare-next.html'>Compare with next.js</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+                 <a href='/universal.html'>Universal developing</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/d-mvc.html' class='active'>decorator的mvc开发模式</a>
+                 <a href='/d-mvc.html' class='active'>MVC pattern with decorator</a>
               
               </li>
             
@@ -63,18 +63,24 @@
         </ul>
       
         <ul class='nav'>
-          <span>使用方法</span>
+          <span>Overview</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/installation.html'>如何使用</a>
+                 <a href='/installation.html'>Getting Started</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/cli.html'>Cli命令</a>
+                 <a href='/decorators.html'>Decorators</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/cli.html'>Cli commander</a>
               
               </li>
             
@@ -82,12 +88,12 @@
         </ul>
       
         <ul class='nav'>
-          <span>在线演示</span>
+          <span>Online demo</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+                 <a href='http://www.koa-cola.com:3000'>Todolist example</a>
               
               </li>
             
@@ -100,37 +106,37 @@
             
               <li>
               
-                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+                 <a href='/tip1-react-init.html'>React component data initialization</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip2-redux.html'>redux-connect组件的redux坑</a>
+                 <a href='/tip2-redux.html'>Using redux in Cola</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+                 <a href='/tip3-inject-global.html'>Inject global</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip4-cluster.html'>cluster集群模式</a>
+                 <a href='/tip4-cluster.html'>Cluster mode</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip5-debug.html'>调试</a>
+                 <a href='/tip5-debug.html'>Debugging</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip6-compile.html'>代码编译</a>
+                 <a href='/tip6-compile.html'>Compiling</a>
               
               </li>
             
@@ -138,28 +144,28 @@
         </ul>
       
         <ul class='nav'>
-          <span>目录结构</span>
+          <span>Project construction</span>
           <ul class='nav'>
             
               <li>
               
-                <a href='/doc/api.html' style="padding:0px">api</a>
+                <a href='/api.html' style="padding:0px">api</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/api-controllers.html'>controllers</a>
+                      <a href='/api-controllers.html'>controllers</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-models.html'>models</a>
+                      <a href='/api-models.html'>models</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-schemas.html'>schemas</a>
+                      <a href='/api-schemas.html'>schemas</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-responses.html'>responses</a>
+                      <a href='/api-responses.html'>responses</a>
                     </li>
                   
                 </ul>
@@ -168,31 +174,31 @@
             
               <li>
               
-                 <a href='/doc/config.html'>config</a>
+                 <a href='/config.html'>config</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/public.html'>public</a>
+                 <a href='/public.html'>public</a>
               
               </li>
             
               <li>
               
-                <a href='/doc/views.html' style="padding:0px">views</a>
+                <a href='/views.html' style="padding:0px">views</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/views-pages.html'>pages</a>
+                      <a href='/views-pages.html'>pages</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-app.html'>app.tsx</a>
+                      <a href='/views-app.html'>app.tsx</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-components.html'>components</a>
+                      <a href='/views-components.html'>components</a>
                     </li>
                   
                 </ul>
@@ -206,62 +212,82 @@
   </div>
   <div class='page'>
     <div class='page-content'>
-      <h1>decorator的mvc开发模式</h1>
+      <h1>MVC pattern with decorator</h1>
       <div style="
           float: right;
           top: -60px;
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/d-mvc.md">修改</a></div>
-      <p>koa-cola可以使用es7的decorator装饰器开发模式来写mvc，controller是必须用提供的decorator来开发（因为涉及到router相关的定义），model和view层则没有强制需要demo所演示的decorator来开发。</p>
+      <!-- koa-cola可以使用es7的decorator装饰器开发模式来写mvc，controller是必须用提供的decorator来开发（因为涉及到router相关的定义），model和view层则没有强制需要demo所演示的decorator来开发。 -->
+In koa-cola we can write mvc by using es7's decorator. Controller have to be defined with the provided decorator (as it relates to the router related definition), and the model and view layers are not forced to be defined by the decorator as the demo following.
 <h3>Controller</h3>
-<p>使用decorator装饰器来注入相关依赖，路由层的decorators包括router、中间件、response、view，响应阶段的decorators包括koa.Context、param、response、request等，比如以下例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; Controller, Get, Use, Param, Body, Delete, Put, Post, QueryParam, View, Ctx, Response &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola'</span>).Decorators.controller;</div><div class="line">@Controller(<span class="string">''</span>) </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooController</span> </span>&#123;</div><div class="line">    @Get(<span class="string">'/some_api'</span>)  <span class="comment">// 定义router以及method</span></div><div class="line">    @Response(Ok)       <span class="comment">// 定义数据返回的结构</span></div><div class="line">    some_api (@Ctx() ctx, @QueryParam() param : any) &#123; <span class="comment">// 注入ctx和param</span></div><div class="line">        <span class="comment">// 初始化数据，数据将会以“Ok”定义的格式返回</span></div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            foo : <span class="string">'bar'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Get(<span class="string">'/some_page'</span>)  <span class="comment">// 定义router以及method</span></div><div class="line">    @View(<span class="string">'some_page'</span>)</div><div class="line">    some_page (@Ctx() ctx, @QueryParam() param : any) &#123; <span class="comment">// 注入ctx和param</span></div><div class="line">        <span class="comment">// 初始化数据，数据将会注入到react组件的props，如：this.props.ctrl.foo</span></div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            foo : <span class="string">'bar'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>因为使用decorator定义router，所以在koa-cola里面不需要单独定义router。</p>
+<!-- 使用decorator装饰器来注入相关依赖，路由层的decorators包括router、中间件、response、view，响应阶段的decorators包括koa.Context、param、response、request等，比如以下例子： -->
+Use decorator to inject dependencies. In the router layer, the decorators include router, middleware, response and view. 
+In the response phase, the decorators including koa.Context, param, response, request, etc. For example. The following example:
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; </div><div class="line">    Controller, Get, Use, Param, Body, Delete, Put, Post, QueryParam, View, Ctx, Response </div><div class="line">&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"><span class="keyword">import</span> Ok <span class="keyword">from</span> <span class="string">'../responses/ok'</span>;</div><div class="line"></div><div class="line">@Controller(<span class="string">''</span>) </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooController</span> </span>&#123;</div><div class="line">    @Get(<span class="string">'/some_api'</span>)  <span class="comment">// define router</span></div><div class="line">    @Response(Ok)      <span class="comment">// define return data format of API</span></div><div class="line">    some_api (@Ctx() ctx, @QueryParam() param : any) &#123; </div><div class="line">        <span class="comment">// inject ctx &amp; param</span></div><div class="line">        <span class="comment">// The data return the format defined by "Ok"</span></div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            foo : <span class="string">'bar'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Get(<span class="string">'/some_page'</span>) <span class="comment">// define router</span></div><div class="line">    @View(<span class="string">'some_page'</span>) <span class="comment">// this router use the page "some_page.tsx" inside "/views/pages/"  to render the view</span></div><div class="line">    some_page (@Ctx() ctx, @QueryParam() param : any) &#123; <span class="comment">// inject ctx &amp; param</span></div><div class="line">        <span class="comment">// Initialize the data.</span></div><div class="line">        <span class="comment">// Data will be injected into react component's props, </span></div><div class="line">        <span class="comment">// we can call that data by: "this.props.ctrl.foo"</span></div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            foo : <span class="string">'bar'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Ok Response</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Koa <span class="keyword">from</span> <span class="string">'koa'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Ok</span>(<span class="params">ctx : Koa.Context, data</span>)</span>&#123;</div><div class="line">    ctx.status = <span class="number">200</span>;</div><div class="line">    <span class="keyword">if</span>(data)&#123;</div><div class="line">        ctx.body = &#123;</div><div class="line">            code : <span class="number">200</span>,</div><div class="line">            result : data</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3>View</h3>
-<p>view层可以是简单的React.Component或者是stateless的函数组件，也可以是使用官方的react-redux封装过的组件，todolist demo的view则是使用了<a href="https://github.com/makeomatic/redux-connect" target="_blank" rel="external">redux-connect</a> 提供的decorator(当然你也可以直接用它的connect方法)，redux-connect也是基于react-redux，以下是view层支持的react组件类型。</p>
-<h4>React.Component组件</h4>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt;   </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">static</span> defaultProps = &#123;</div><div class="line">        </div><div class="line">    &#125;;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> &lt;h1&gt;Wow koa-cola!&lt;/h1&gt;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Index</div></pre></td></tr></table></figure>
-<h4>stateless组件</h4>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">&#123;some_props&#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &lt;h1&gt;Wow koa-cola!&lt;/h1&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4>react-redux组件</h4>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">const</span> Index = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;some_props&#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &lt;h1&gt;Wow koa-cola!&lt;/h1&gt;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</div><div class="line">    mapStateToProps,</div><div class="line">    mapDispatchToProps</div><div class="line">)(Index)</div></pre></td></tr></table></figure>
-<h4>redux-connect的decorator</h4>
-<p>使用这种方式的话，需要注意两点：</p>
+<!-- page的view组件可以使用不同类型的react组件： -->
+Page's view components can use different types of react components
 <ul>
-<li>redux的reducer需要使用装饰器colaReducer</li>
-<li>如果有子组件也是使用redux-connect封装，则需要使用装饰器include</li>
-<li>以上两点可以参考todolist的<a href="https://github.com/koa-cola/todolist/blob/master/views/pages/colastyleDemo.tsx" target="_blank" rel="external">代码</a></li>
+<li><code>React.Component</code> component</li>
+<li>stateless function component</li>
+<li>react-redux component</li>
+<li><code>Cola</code> decorator component provided by koa-cola (React-redux based data initialization component).</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> AddTodo <span class="keyword">from</span> <span class="string">'../official-demo/containers/AddTodo'</span>;</div><div class="line"><span class="keyword">import</span> FilterLink <span class="keyword">from</span> <span class="string">'../official-demo/containers/FilterLink'</span>;</div><div class="line"><span class="keyword">import</span> VisibleTodoList <span class="keyword">from</span> <span class="string">'../official-demo/containers/VisibleTodoList'</span>;</div><div class="line"><span class="keyword">const</span> &#123;</div><div class="line">  asyncConnect,</div><div class="line">  colaReducer,</div><div class="line">  include</div><div class="line">&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola'</span>).Decorators.view;</div><div class="line">@asyncConnect([</div><div class="line">  &#123;</div><div class="line">    key: <span class="string">'todosData'</span>,</div><div class="line">    promise: <span class="keyword">async</span> (&#123; params, helpers, <span class="attr">store</span>: &#123; dispatch &#125; &#125;) =&gt; &#123;</div><div class="line">      <span class="keyword">const</span> api = <span class="keyword">new</span> GetTodoList(&#123;&#125;);</div><div class="line">      <span class="keyword">const</span> data = <span class="keyword">await</span> api.fetch(helpers.ctx);</div><div class="line">      dispatch(&#123;</div><div class="line">        type: <span class="string">'INIT_TODO'</span>,</div><div class="line">        data: data.result.result</div><div class="line">      &#125;);</div><div class="line">      <span class="keyword">return</span> data.result.result;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">])</div><div class="line">@colaReducer(&#123;</div><div class="line">  todos,</div><div class="line">  visibilityFilter</div><div class="line">&#125;)</div><div class="line">@include(&#123; AddTodo, FilterLink, VisibleTodoList &#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColastyleDemo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;App /&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">export default ColastyleDemo;</div></pre></td></tr></table></figure>
-<h4>自定义header和bundle方式</h4>
-<p>koa-cola渲染页面时，默认会找views/pages/layout.ts封装页面的html，如果没有这个layout文件，则直接输出page组件的html，如果view组件使用了doNotUseLayout decorator，则页面不会使用layout.ts输出，这时你可以自定义header和bundle的decorator。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">const</span> &#123;</div><div class="line">  header, bundle, doNotUseLayout</div><div class="line">&#125; = <span class="built_in">require</span>(<span class="string">'../../../dist'</span>).Decorators.view;</div><div class="line">@doNotUseLayout</div><div class="line">@bundle([</div><div class="line">  <span class="string">"/bundle.js"</span>,</div><div class="line">  <span class="string">"/test.js"</span></div><div class="line">])</div><div class="line">@header(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &lt;head&gt;</div><div class="line">    &lt;meta name="viewport" content="width=device-width" /&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">&#125;)</div><div class="line">function Page ()&#123;</div><div class="line">  return &lt;h1&gt;koa-cola&lt;/h1&gt;</div><div class="line">&#125;;</div><div class="line">export default Page</div></pre></td></tr></table></figure>
+<h4>React.Component</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt;   </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">static</span> defaultProps = &#123;</div><div class="line">        </div><div class="line">    &#125;;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> &lt;h1&gt;Wow koa-cola!&lt;/h1&gt;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Index</div></pre></td></tr></table></figure>
+<h4>stateless component</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">&#123;some_props&#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &lt;h1&gt;Wow koa-cola!&lt;/h1&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4>react-redux component</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">const</span> Index = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;some_props&#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &lt;h1&gt;Wow koa-cola!&lt;/h1&gt;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</div><div class="line">    mapStateToProps,</div><div class="line">    mapDispatchToProps</div><div class="line">)(Index)</div></pre></td></tr></table></figure>
+<h4>Cola decorator component</h4>
+<!-- 使用Cola装饰器来封装基于react-redux的组件 -->
+Use Cola decorators to create react-redux base components.
+<!-- 如果有子组件也是使用Cola 装饰器封装，则需要使用装饰器`include` -->
+If there's children components also created with `Cola` decorator, you need to use `include` decorator to include them:
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> AddTodo <span class="keyword">from</span> <span class="string">'../official-demo/containers/AddTodo'</span>;</div><div class="line"><span class="keyword">import</span> FilterLink <span class="keyword">from</span> <span class="string">'../official-demo/containers/FilterLink'</span>;</div><div class="line"><span class="keyword">import</span> VisibleTodoList <span class="keyword">from</span> <span class="string">'../official-demo/containers/VisibleTodoList'</span>;</div><div class="line"><span class="keyword">const</span> &#123;</div><div class="line">  Cola</div><div class="line">  include</div><div class="line">&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"></div><div class="line">@Cola(&#123;</div><div class="line">    initData : &#123;</div><div class="line">        todosData : <span class="keyword">async</span> (&#123; params, helpers, <span class="attr">store</span>: &#123; dispatch &#125; &#125;) =&gt; &#123;</div><div class="line">            <span class="keyword">const</span> api = <span class="keyword">new</span> GetTodoList(&#123;&#125;);</div><div class="line">            <span class="keyword">const</span> data = <span class="keyword">await</span> api.fetch(helpers.ctx);</div><div class="line">            dispatch(&#123;</div><div class="line">                type: <span class="string">'INIT_TODO'</span>,</div><div class="line">                data: data.result.result</div><div class="line">            &#125;);</div><div class="line">            <span class="keyword">return</span> data.result.result;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    reducer : &#123;</div><div class="line">        todos,</div><div class="line">        visibilityFilter</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">@include(&#123; AddTodo, FilterLink, VisibleTodoList &#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColastyleDemo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;App /&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">export default ColastyleDemo;</div></pre></td></tr></table></figure>
+<h4>Custom header &amp; bundle packing</h4>
+<!-- koa-cola 渲染页面时，默认会找`views/pages/layout.ts`封装页面的 html，如果没有这个`layout`文件，则直接输出 page 组件返回的 html，如果 view 组件使用了`doNotUseLayout` 装饰器，则页面不会使用`layout.ts`输出，这时你可以自定义`header`和`bundle`装饰器。 -->
+When koa-cola render view in server side, it will be looking for `views/pages/layout.ts` as the page layout.
+if `layout.ts` file does not exist, the view component will render directly.
+If the view component uses the `doNotUseLayout` decorator, the page will not use `layout.ts`, and you probably need `header` and `bundle` decorators to define header and resource.
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">const</span> &#123;</div><div class="line">  header, bundle, doNotUseLayout</div><div class="line">&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line">@doNotUseLayout</div><div class="line">@bundle([</div><div class="line">  <span class="string">"/bundle.js"</span>,</div><div class="line">  <span class="string">"/test.js"</span></div><div class="line">])</div><div class="line">@header(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &lt;head&gt;</div><div class="line">    &lt;meta name="viewport" content="width=device-width" /&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">&#125;)</div><div class="line">function Page ()&#123;</div><div class="line">  return &lt;h1&gt;koa-cola&lt;/h1&gt;</div><div class="line">&#125;;</div><div class="line">export default Page</div></pre></td></tr></table></figure>
 <h3>Model</h3>
-<p>和必须使用decorator的controller层、必须使用react组件的view层不一样，model层是完全没有耦合，你可以使用任何你喜欢的orm或者odm，或者不需要model层也可以，不过使用koa-cola风格的来写model，你可以体验不一样的开发模式。</p>
-<h4>你可以直接在目录api/models下创建如user.ts：</h4>
+<!-- #### 你可以直接在目录 api/models 下创建如 user.ts： -->
+#### create "user.ts" directly under the directory "api/models"
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> mongoose <span class="keyword">from</span> <span class="string">'mongoose'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> mongoose.model(<span class="string">'user'</span>, <span class="keyword">new</span> mongoose.Schema(&#123;</div><div class="line">    name : <span class="built_in">String</span>,</div><div class="line">    email : <span class="built_in">String</span></div><div class="line">&#125;))</div></pre></td></tr></table></figure>
-<p>然后就可以在其他代码里面使用：</p>
+<p>Then you can use it in other code:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> user = <span class="keyword">await</span> app.models.user.find(&#123;<span class="attr">name</span> : <span class="string">'harry'</span>&#125;)</div></pre></td></tr></table></figure>
-<h4>使用koa-cola的风格写model</h4>
-<p>首先在<code>api/schemas</code>目录创建user.ts</p>
+<h4>koa-cola style to write the model</h4>
+<!-- 首先在`api/schemas`目录创建`user.ts` -->
+First create schema `user.ts` in the `api/schemas` directory:
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> userSchema = <span class="function"><span class="keyword">function</span>(<span class="params">mongoose</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        name: &#123;</div><div class="line">            type : <span class="built_in">String</span></div><div class="line">        &#125;,</div><div class="line">        email : &#123;</div><div class="line">            type : <span class="built_in">String</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在目录<code>api/models</code>下创建model如user.ts：</p>
+<!-- 在目录`api/models`下创建 model 如`user.ts`： -->
+Create a model `user.ts` in `api/models`:
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> mongoose <span class="keyword">from</span> <span class="string">'mongoose'</span></div><div class="line"><span class="keyword">import</span> userSchema <span class="keyword">from</span> <span class="string">'../schemas/user'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> mongoose.model(<span class="string">'user'</span>, <span class="keyword">new</span> mongoose.Schema(userSchema(mongoose)))</div></pre></td></tr></table></figure>
-<p>当然也可以使用decorator方式定义model，还可以定义相关hook，详情可以参考<a href="https://github.com/aksyonov/mongoose-decorators" target="_blank" rel="external">mongoose-decorators</a></p>
+<!-- 当然也可以使用 decorator 方式定义 model，还可以定义相关hook，详情可以参考[mongoose-decorators](https://github.com/aksyonov/mongoose-decorators) -->
+Use decorator to define model also works well, we can define the relevant hook if needeed. More details can visit [mongoose-decorators](https://github.com/aksyonov/mongoose-decorators)
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; todoListSchema &#125; <span class="keyword">from</span> <span class="string">'../schemas/todoList'</span>;</div><div class="line"><span class="keyword">const</span> &#123; model &#125; = app.decorators.model;</div><div class="line"></div><div class="line">@model(todoListSchema(app.mongoose))</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> </span>&#123;&#125;</div></pre></td></tr></table></figure>
-<p>使用cli生成model的schema</p>
-<p><code>koa-cola --schema</code> 自动生成model的接口定义在<code>typings/schema.ts</code></p>
-<p>然后你可以在代码通过使用typescript的类型定义，享受vscode的intellisense带来的乐趣</p>
+<!-- 使用 cli 生成 model 的 schema -->
+Generate model's schema using cli
+<!-- `koa-cola --schema` 自动生成model的接口定义在`typings/schema.ts` -->
+`koa-cola schema` will automatically generate model interface in `typings/schema.ts`.
+<!-- 然后你可以在代码通过使用 typescript 的类型定义，享受 vscode 的 intellisense 带来的便捷 -->
+Then you can enjoy the convenience of vscode's intellisense by defining the types of typescript in your code.
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;userSchema&#125; <span class="keyword">from</span> <span class="string">'./typings/schema'</span> </div><div class="line"><span class="keyword">const</span> user : userSchema = <span class="keyword">await</span> app.models.user.find(&#123;<span class="attr">name</span> : <span class="string">'harry'</span>&#125;)</div></pre></td></tr></table></figure>
-<p>在前面提到的为什么需要在api/schemas定义model的schema，除了上面可以自动生成schema的接口，这部分可以在浏览器端代码复用，比如数据Validate。详细可以查看<a href="http://mongoosejs.com/docs/browser.html" target="_blank" rel="external">文档</a></p>
-<h4>koa-cola提供了前后端universal的api接口定义，比如todolist demo的获取数据的接口定义</h4>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; todoListSchema &#125; <span class="keyword">from</span> <span class="string">'./typings/schema'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ApiBase, apiFetch &#125; <span class="keyword">from</span> <span class="string">'koa-cola'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">GetTodoList</span> <span class="keyword">extends</span> <span class="title">ApiBase</span>&lt;</span></div><div class="line"><span class="class">  </span>&#123;</div><div class="line">      <span class="comment">// 参数类型</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    code: number;</div><div class="line">    result: [todoListSchema];</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">      <span class="comment">// 异常定义</span></div><div class="line">  &#125;</div><div class="line">&gt; &#123;</div><div class="line">  <span class="keyword">constructor</span>(body) &#123;</div><div class="line">    <span class="keyword">super</span>(body);</div><div class="line">  &#125;</div><div class="line">  url: string = <span class="string">'/api/getTodoList'</span>;</div><div class="line">  method: string = <span class="string">'get'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在代码里面使用api，并享受ts带来的乐趣：</p>
+<!-- 在前面提到的为何需要在`api/schemas`定义 model 的 schema，除了上面的自动生成 schema 接口，还可以在浏览器端代码复用，比如数据Validate。详细可以查看[文档](http://mongoosejs.com/docs/browser.html) -->
+As mentioned earlier, the reason we need to define the model schema in `api/schemas`, in addition to generate schema interface, you can use the schema in both browser and server side. more detail you can visit [document](http://mongoosejs.com/docs/browser.html)
+<!-- #### koa-cola提供了前后端universal的api接口定义，比如todolist demo的获取数据的接口定义 -->
+#### koa-cola provides universal api interface definitions for both front and back end, such as `GetTodoList` api definition in the todolist demo:
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; todoListSchema &#125; <span class="keyword">from</span> <span class="string">'./typings/schema'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ApiBase, apiFetch &#125; <span class="keyword">from</span> <span class="string">'koa-cola'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">GetTodoList</span> <span class="keyword">extends</span> <span class="title">ApiBase</span>&lt;</span></div><div class="line"><span class="class">  </span>&#123;</div><div class="line">      <span class="comment">// Parameter Type</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    code: number;</div><div class="line">    result: [todoListSchema];</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">      <span class="comment">// Abnormal definition</span></div><div class="line">  &#125;</div><div class="line">&gt; &#123;</div><div class="line">  <span class="keyword">constructor</span>(body) &#123;</div><div class="line">    <span class="keyword">super</span>(body);</div><div class="line">  &#125;</div><div class="line">  url: string = <span class="string">'/api/getTodoList'</span>;</div><div class="line">  method: string = <span class="string">'get'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<!-- 在代码里面使用 api，并享受 ts 带来的便捷： -->
+Use api in the code, and get the convenience provided by ts:
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> api = <span class="keyword">new</span> GetTodoList(&#123;&#125;);</div><div class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> api.fetch(helpers.ctx);</div></pre></td></tr></table></figure>
 <p><img src="https://github.com/hcnode/koa-cola/raw/master/screenshots/api1.png" alt="Drawing" width="600"><br>
 <img src="https://github.com/hcnode/koa-cola/raw/master/screenshots/api2.png" alt="Drawing" width="600"></p>
-<p>又比如参数body的定义，如果定义了必传参数，调用时候没有传，则vscode会提示错误</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; testSchema &#125; <span class="keyword">from</span> <span class="string">'./typings/schema'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ApiBase, apiFetch &#125; <span class="keyword">from</span> <span class="string">'koa-cola'</span></div><div class="line"><span class="keyword">export</span> interface ComposeBody&#123;</div><div class="line">    foo : string,</div><div class="line">    bar? : number</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Compose</span> <span class="keyword">extends</span> <span class="title">ApiBase</span>&lt;<span class="title">ComposeBody</span>, <span class="title">testSchema</span>, </span>&#123;&#125;&gt;&#123;</div><div class="line">    <span class="keyword">constructor</span>(body : ComposeBody)&#123;</div><div class="line">        <span class="keyword">super</span>(body)</div><div class="line">    &#125;</div><div class="line">    url : string = <span class="string">'/compose'</span></div><div class="line">    method : string = <span class="string">'post'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="https://github.com/hcnode/koa-cola/raw/master/screenshots/api3.png" alt="Drawing" width="600"></p>
 
@@ -269,10 +295,10 @@
   </div>
   <div class='switch-page'>
     
-      <a class='previous' href='/doc/universal.html'>Previous</a>
+      <a class='previous' href='/universal.html'>Previous</a>
     
     
-      <a class='next' href='/doc/installation.html'>Next</a>
+      <a class='next' href='/installation.html'>Next</a>
     
   </div>
 </body>

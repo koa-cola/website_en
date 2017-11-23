@@ -1,7 +1,7 @@
 ---
 layout: default
 id: universal
-title: Universal developing
+title: Universal
 prev: compare-next.html
 next: d-mvc.html
 ---
@@ -10,9 +10,9 @@ next: d-mvc.html
 ### front end and back end router
 
 <!-- 通过controller生成server端的react-router，并且也生成client端的react-redux的Provider(里面还是封装了react-router) -->
-koa-cola auto generate both front end and back ends router
+koa-cola auto generate both front end and back end router
 
-in controller:
+controller:
 
 ```javascript
 @Controller('') 

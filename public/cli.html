@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charSet='utf-8' />
-  <title>ko-cola - Cli命令</title>
-  <link href='/doc/css/docs.css' rel='stylesheet'>
-  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <title>ko-cola - Cli commander</title>
+  <link href='/css/docs.css' rel='stylesheet'>
+  <link href='/css/github-markdown.css' rel='stylesheet'>
   <script>
     window.onunload = function(){
       var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
@@ -26,36 +26,36 @@
     <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
       
         <ul class='nav'>
-          <span>介绍</span>
+          <span>Introduction</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/index.html'>koa-cola是什么?</a>
+                 <a href='/index.html'>What is koa-cola?</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/ssr.html'>SSR和SPA</a>
+                 <a href='/ssr.html'>SSR & SPA</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/compare-next.html'>对比next.js</a>
+                 <a href='/compare-next.html'>Compare with next.js</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+                 <a href='/universal.html'>Universal developing</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/d-mvc.html'>decorator的mvc开发模式</a>
+                 <a href='/d-mvc.html'>MVC pattern with decorator</a>
               
               </li>
             
@@ -63,18 +63,24 @@
         </ul>
       
         <ul class='nav'>
-          <span>使用方法</span>
+          <span>Overview</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/installation.html'>如何使用</a>
+                 <a href='/installation.html'>Getting Started</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/cli.html' class='active'>Cli命令</a>
+                 <a href='/decorators.html'>Decorators</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/cli.html' class='active'>Cli commander</a>
               
               </li>
             
@@ -82,12 +88,12 @@
         </ul>
       
         <ul class='nav'>
-          <span>在线演示</span>
+          <span>Online demo</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+                 <a href='http://www.koa-cola.com:3000'>Todolist example</a>
               
               </li>
             
@@ -100,37 +106,37 @@
             
               <li>
               
-                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+                 <a href='/tip1-react-init.html'>React component data initialization</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip2-redux.html'>redux-connect组件的redux坑</a>
+                 <a href='/tip2-redux.html'>Using redux in Cola</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+                 <a href='/tip3-inject-global.html'>Inject global</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip4-cluster.html'>cluster集群模式</a>
+                 <a href='/tip4-cluster.html'>Cluster mode</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip5-debug.html'>调试</a>
+                 <a href='/tip5-debug.html'>Debugging</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip6-compile.html'>代码编译</a>
+                 <a href='/tip6-compile.html'>Compiling</a>
               
               </li>
             
@@ -138,28 +144,28 @@
         </ul>
       
         <ul class='nav'>
-          <span>目录结构</span>
+          <span>Project construction</span>
           <ul class='nav'>
             
               <li>
               
-                <a href='/doc/api.html' style="padding:0px">api</a>
+                <a href='/api.html' style="padding:0px">api</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/api-controllers.html'>controllers</a>
+                      <a href='/api-controllers.html'>controllers</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-models.html'>models</a>
+                      <a href='/api-models.html'>models</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-schemas.html'>schemas</a>
+                      <a href='/api-schemas.html'>schemas</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-responses.html'>responses</a>
+                      <a href='/api-responses.html'>responses</a>
                     </li>
                   
                 </ul>
@@ -168,31 +174,31 @@
             
               <li>
               
-                 <a href='/doc/config.html'>config</a>
+                 <a href='/config.html'>config</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/public.html'>public</a>
+                 <a href='/public.html'>public</a>
               
               </li>
             
               <li>
               
-                <a href='/doc/views.html' style="padding:0px">views</a>
+                <a href='/views.html' style="padding:0px">views</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/views-pages.html'>pages</a>
+                      <a href='/views-pages.html'>pages</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-app.html'>app.tsx</a>
+                      <a href='/views-app.html'>app.tsx</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-components.html'>components</a>
+                      <a href='/views-components.html'>components</a>
                     </li>
                   
                 </ul>
@@ -206,31 +212,43 @@
   </div>
   <div class='page'>
     <div class='page-content'>
-      <h1>Cli命令</h1>
+      <h1>Cli commander</h1>
       <div style="
           float: right;
           top: -60px;
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/cli.md">修改</a></div>
-      <p>koa-cola提供了一些有用的cli命令，包括新建项目、启动项目、生成model schema文件</p>
-<h3>创建koa-cola项目</h3>
-<p><code>koa-cola new app</code> 或者 <code>koa-cola n app</code> 在当前目录创建文件夹名字为app的模版项目，并自动安装依赖，和自动build bundle和启动应用。</p>
-<h3>启动应用</h3>
-<p><code>koa-cola</code> 在项目目录里面执行，启动项目，node端启动app项目，但是不会build bundle</p>
-<p><code>koa-cola dev</code> dev模式启动，build webpack bundle、launch项目、并自动打开浏览器</p>
+      <!-- koa-cola提供了一些有用的cli命令，包括新建项目、启动项目、生成model schema文件 -->
+koa-cola provides some useful cli commands, include creating a new project, launching a project, and generating a model schema file.
+<h3>Create a koa-cola project</h3>
+<p>new koa-cola project:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola new app</div></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola n app</div></pre></td></tr></table></figure>
+<p>the project will install dependencies, build bundle, and launch the app automatically.</p>
+<h3>launch App</h3>
+<!-- `koa-cola` 在项目目录里面执行，启动项目，node端启动app项目，但是不会build bundle -->
+To launch the project:
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola</div></pre></td></tr></table></figure>
+<p>To start as development mode, build webpack bundle, launch project, and watch files automatically:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola dev</div></pre></td></tr></table></figure>
 <h3>build bundle</h3>
-<p><code>koa-cola build</code> 执行build命令，会自动寻找controller，并通过controller找到view，最后生成Provider，这个Provider会是webapck build js bundle的入口。</p>
-<p><strong>注意：这将会覆盖你的view/app.tsx</strong></p>
-<p>如果你需要维护你的app.tsx，那么你需要运行webpack命令而不是<code>koa-cola build</code></p>
-<h3>生成model schema文件</h3>
-<p><code>koa-cola schema</code> 或者 <code>koa-cola s</code> 生成<code>api/schenmas</code>下面的model schema定义，保存在<code>typings/schema.ts</code></p>
+<p>To run a build command:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola build</div></pre></td></tr></table></figure>
+<p>the build action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.</p>
+<p><strong>Note: This will overwrite your <code>view/app.tsx</code></strong></p>
+<!-- 如果你需要维护你的app.tsx，那么你需要运行webpack命令而不是`koa-cola build` -->
+If you want a 'homemade' `app.tsx` , you need to run the `webpack` command instead of `koa-cola build`.
+<h3>Create model schema file</h3>
+<p>Run <code>koa-cola schema</code> or <code>koa-cola s</code> to create definition of model schema inside <code>api/schenmas</code>.<br>
+file will save as <code>typings/schema.ts</code>.</p>
 
     </div>
   </div>
   <div class='switch-page'>
     
-      <a class='previous' href='/doc/installation.html'>Previous</a>
+      <a class='previous' href='/installation.html'>Previous</a>
     
     
   </div>

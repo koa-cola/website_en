@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charSet='utf-8' />
+  <title>ko-cola - Decorators</title>
+  <link href='/css/docs.css' rel='stylesheet'>
+  <link href='/css/github-markdown.css' rel='stylesheet'>
+  <script>
+    window.onunload = function(){
+      var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
+      document.cookie = 'scollTop=' + scollTop;
+    }
+    window.onload = function(){
+      var scrollTop = /scollTop=(\d+)/.test(document.cookie) && RegExp.$1;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='scroll'
+      document.getElementsByClassName('menu-nav')[0].scrollTop = scrollTop || 0;
+      document.getElementsByClassName('menu-nav')[0].style.overflowY='hidden'
+    }
+  </script>
+</head>
+<body>
+  <div class='menu'>
+    <div class='logo'>
+      <a href="https://www.github.com/hcnode/koa-cola"><img src="/doc/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
+    </div>
+    <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
+      
+        <ul class='nav'>
+          <span>Introduction</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/index.html'>What is koa-cola?</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/ssr.html'>SSR & SPA</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/compare-next.html'>Compare with next.js</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/universal.html'>Universal developing</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/d-mvc.html'>MVC pattern with decorator</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Overview</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/installation.html'>Getting Started</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/decorators.html' class='active'>Decorators</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/cli.html'>Cli commander</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Online demo</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='http://www.koa-cola.com:3000'>Todolist example</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Tips</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                 <a href='/tip1-react-init.html'>React component data initialization</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/tip2-redux.html'>Using redux in Cola</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/tip3-inject-global.html'>Inject global</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/tip4-cluster.html'>Cluster mode</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/tip5-debug.html'>Debugging</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/tip6-compile.html'>Compiling</a>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+        <ul class='nav'>
+          <span>Project construction</span>
+          <ul class='nav'>
+            
+              <li>
+              
+                <a href='/api.html' style="padding:0px">api</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/api-controllers.html'>controllers</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/api-models.html'>models</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/api-schemas.html'>schemas</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/api-responses.html'>responses</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/config.html'>config</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/public.html'>public</a>
+              
+              </li>
+            
+              <li>
+              
+                <a href='/views.html' style="padding:0px">views</a>
+                <ul class='nav' style="padding-top:0px">
+                  
+                    <li style="height:28px">
+                      <a href='/views-pages.html'>pages</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/views-app.html'>app.tsx</a>
+                    </li>
+                  
+                    <li style="height:28px">
+                      <a href='/views-components.html'>components</a>
+                    </li>
+                  
+                </ul>
+              
+              </li>
+            
+          </ul>
+        </ul>
+      
+    </nav>
+  </div>
+  <div class='page'>
+    <div class='page-content'>
+      <h1>Decorators</h1>
+      <div style="
+          float: right;
+          top: -60px;
+          position: relative;
+          margin-right: 10px;
+      "><a href="https://github.com/koa-cola/website/blob/master/source/decorators.md">修改</a></div>
+      <h3>Cola decorator</h3>
+<!-- 定义redux数据初始化，react-redux组件的mapStateToProps和mapDispatchToProps定义，和redux的reducer定义，装饰器可以同时支持服务器端和浏览器端。 -->
+`Cola` decorator can define redux initial data, `mapStateToProps` and `mapDispatchToProps` for react-redux components, and reducers for redux as well. Decorator support both server-side and browser-side.
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">@Cola(&#123;</div><div class="line">  initData: &#123;</div><div class="line">    <span class="comment">// return any data in props</span></div><div class="line">    todos : <span class="keyword">async</span> () =&gt; &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">await</span> <span class="built_in">Promise</span>.resolve([])</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  mapStateToProps: <span class="function"><span class="params">state</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="comment">// return props</span></div><div class="line">    &#125;;</div><div class="line">  &#125;,</div><div class="line">  mapDispatchToProps: <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="comment">// return props</span></div><div class="line">    &#125;;</div><div class="line">  &#125;,</div><div class="line">  reducer: &#123;</div><div class="line">    <span class="comment">// define reducer here</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3>include decorator</h3>
+<!-- 定义当前组件使用的子组件，当子组件使用了Cola装饰器进行数据初始化时候，必须使用include装饰器 -->
+`include` decorator indicate the component contain children components defined by Cola decorator.
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">@Cola(&#123;</div><div class="line">  initData : &#123;</div><div class="line">    prop1 : <span class="function">(<span class="params">&#123; params, helpers &#125;</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(<span class="string">'prop1'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child1</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt;   </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">  &#125;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    <span class="comment">// this.props.onLoad();</span></div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">var</span> result = &lt;div&gt;</div><div class="line">      &lt;h3&gt;child1&lt;/h3&gt;</div><div class="line">      &#123;this.props.prop1&#125;</div><div class="line">    &lt;/div&gt;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">@Cola(&#123;</div><div class="line">  initData : &#123;</div><div class="line">    prop1 : <span class="function">(<span class="params">&#123; params, helpers &#125;</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">@include(&#123;</div><div class="line">  Child1</div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MultiChildren</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">var</span> result = (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">          &lt;h3&gt;parent&lt;<span class="regexp">/h3&gt;</span></div><div class="line"><span class="regexp">          &#123;this.props.prop1&#125;</span></div><div class="line"><span class="regexp">        &lt;/</span>div&gt;</div><div class="line">        &lt;Child1 &#123;...this.props&#125; /&gt;</div><div class="line">      &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">    );</span></div><div class="line"><span class="regexp">    return result;</span></div><div class="line"><span class="regexp">  &#125;</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<h3>doNotUseLayout decorator</h3>
+<!-- 默认page组件会使用views/pages/layout.ts来渲染，如果不使用可以通过定义这个装饰器 -->
+By default, page component will render with `views/pages/layout.ts`, if we don't need that layout, you can use this decorator:
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@doNotUseLayout</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt;   </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">      <span class="keyword">super</span>(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;</div><div class="line">      &lt;div&gt;wow koa-cola&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3>header &amp; bundle decorator</h3>
+<!-- 当使用doNotUseLayout装饰器时，如果需要自定义插入header和js bundle，可以使用这两个装饰器 -->
+When using `doNotUseLayout` decorator, if you need to custom header and resource, you can use these two decorators.
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">@doNotUseLayout</div><div class="line">@bundle([</div><div class="line">  <span class="string">"/bundle.js"</span>,</div><div class="line">  <span class="string">"/test.js"</span></div><div class="line">])</div><div class="line">@header(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &lt;head&gt;</div><div class="line">    &lt;meta name="viewport" content="width=device-width" /&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">&#125;)</div><div class="line">class Page extends React.Component&lt;Props, States&gt;   &#123;</div><div class="line">  constructor(props: Props) &#123;</div><div class="line">      super(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    return &lt;div&gt;</div><div class="line">      &lt;div&gt;wow koa-cola&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+    </div>
+  </div>
+  <div class='switch-page'>
+    
+      <a class='previous' href='/installation.html'>Previous</a>
+    
+    
+      <a class='next' href='/cli.html'>Next</a>
+    
+  </div>
+</body>
+</html>
