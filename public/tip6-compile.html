@@ -49,7 +49,7 @@
             
               <li>
               
-                 <a href='/universal.html'>Universal developing</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
@@ -220,27 +220,15 @@
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/tip6-compile.md">修改</a></div>
       <h3>Browser side</h3>
-<!-- 前端的bundle build使用webpack来构建，使用cli命令创建项目，会自动生成[webpack配置](https://github.com/hcnode/koa-cola/blob/master/template/webpack.config.js)
-ts文件的loader使用了[awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader)，并配置了使用babel，加入babel-polyfill到bundle，可以兼容ie9+。 -->
-The front-end bundle is built by webpack. When using the cli command to create a koa-cola project, it will be automatically generated [webpack config](https://github.com/hcnode/koa-cola/blob/master/template/webpack.config.js)
-We use [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader) as ts loader, and babel, add `babel-polyfill` to bundle. 
-<!-- webpack的入口tsx文件在项目里面的`view/app.tsx`: -->
-The entry of webpack is `view/app.tsx` in the project by default.
+<p>ts文件的loader使用了<a href="https://github.com/s-panferov/awesome-typescript-loader" target="_blank" rel="external">awesome-typescript-loader</a>，并配置了使用babel，加入babel-polyfill到bundle，可以兼容ie9+。 --&gt;<br>
+The front-end bundle is built by webpack. When using the cli command to create a koa-cola project, it will be automatically generated <a href="https://github.com/hcnode/koa-cola/blob/master/template/webpack.config.js" target="_blank" rel="external">webpack config</a><br>
+We use <a href="https://github.com/s-panferov/awesome-typescript-loader" target="_blank" rel="external">awesome-typescript-loader</a> as ts loader, and babel, add <code>babel-polyfill</code> to bundle.</p>
+<p>The entry of webpack is <code>view/app.tsx</code> in the project by default.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> IndexController <span class="keyword">from</span> <span class="string">'../api/controllers/IndexController'</span>;</div><div class="line"><span class="comment">// The following 3 modules are the entrance of react components.</span></div><div class="line"><span class="keyword">import</span> index <span class="keyword">from</span> <span class="string">'./pages/index'</span>;</div><div class="line"><span class="keyword">import</span> officialDemo <span class="keyword">from</span> <span class="string">'./pages/officialDemo'</span>;</div><div class="line"><span class="keyword">import</span> colastyleDemo <span class="keyword">from</span> <span class="string">'./pages/colastyleDemo'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> &#123; createProvider &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola'</span>);</div><div class="line"><span class="comment">// using createProvider provided by koa-cola will automatically create router，</span></div><div class="line"><span class="comment">// If want to the official Provider, we will need to write router by ourselves</span></div><div class="line"><span class="keyword">const</span> Provider = createProvider([IndexController], &#123;</div><div class="line">  index,</div><div class="line">  officialDemo,</div><div class="line">  colastyleDemo</div><div class="line">&#125;);</div><div class="line"></div><div class="line">render(&lt;Provider /&gt;, document.getElementById('app'));</div></pre></td></tr></table></figure>
-<!-- wepack build 新建默认的项目得到的bundle的大小有400K，依赖的库组成如下图： -->
-Run `webpack build` to build the default project, it will generate a bundle of size at about 400K. Dependent library composition as shown below:
+<p>Run <code>webpack build</code> to build the default project, it will generate a bundle of size at about 400K. Dependent library composition as shown below:</p>
 <p><img src="https://github.com/hcnode/koa-cola/raw/master/screenshots/bundle.png" alt="Drawing" width="800"></p>
-<!-- webpack的配置文件默认加了四个IgnorePlugin插件，因为有些文件是前后端都会使用，所以需要忽略服务器端的require。 -->
-The webpack configuration file has four IgnorePlugin plugins by default, because some files are required at both front and server side, so we need to ignore the server-side requires.
+<p>The webpack configuration file has four IgnorePlugin plugins by default, because some files are required at both front and server side, so we need to ignore the server-side requires.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The following two are for server-side use, no need package into webpack</span></div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/\.\/src\/app/</span>),</div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/\.\/src\/util\/injectGlobal/</span>),</div><div class="line"><span class="comment">// The following two are controller references, used on the server-side, so must be ignored by webpack. </span></div><div class="line"><span class="comment">// If your controller also has a server-side library, you must also add IgnorePlugin plug-in.</span></div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/koa$/</span>),</div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/koa-body$/</span>),</div></pre></td></tr></table></figure>
-<!-- ### Server side -->
-<!-- koa-cola框架使用typescript编写，生产环境的代码是使用最新的js标准语法(需node7.6及以上)，即只编译代码的`import export`、ts语法，并未编译es6或es7（比如async/await），所以将不支持低版本的node。 -->
-<!-- The koa-cola framework is writed by typescript. The code apply the latest js standard syntax (node7.6 and above) which released in production environment. compiler only transfer `import export` and ts syntax, not transferring es6 or es7 (e.g. async/await). So the lower version of node will not be supported. -->
-<!-- 如需在低版本node的环境下使用，请您自己修改[typescript编译设置](https://www.typescriptlang.org/docs/handbook/compiler-options.html)，编译koa-cola框架的代码。 -->
-<!-- If you want to use koa-cola in the lower version of node environment, please modify [Typescript Compiler Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html) to compile koa-cola framework's code. -->
-<!-- 如果在node.js 7.6及以上的环境下运行，则可以直接引用，用过ts-node运行（cli运行命令都是使用ts-node），甚至可以直接[线上使用](https://github.com/TypeStrong/ts-node/issues/104) -->
-<!-- If the app is running in node.js environment of v7.6 or above, we can directly run it without any trouble. It's run by ts-node(cli command is using ts-node). 
-Even we can [deployed it in production](https://github.com/TypeStrong/ts-node/issues/104). -->
 
     </div>
   </div>

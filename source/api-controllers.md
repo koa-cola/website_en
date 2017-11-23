@@ -60,7 +60,6 @@ function Index({ctrl : {list}}){
 
 koa-cola provide other nice decorations.
 
-<!-- ### 可以通过Response装饰器返回固定数据格式 -->
 ### Return fixed data format by return of router
 
 ```javascript

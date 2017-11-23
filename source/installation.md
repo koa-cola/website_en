@@ -7,14 +7,12 @@ next: cli.html
 ---
 
 
-<!-- koa-cola支持node.js的版本包括7.6和8，建议使用8，因为8.0使用的最新的v8版本，而且8.0会在[今年10月正式激活LTS](https://github.com/nodejs/LTS)，因为koa-cola的async/await是原生方式使用没有经过transform，所以不支持node7.6以下的node版本。 -->
 
 ## Create a project
 
 * **install global koa-cola, ts-node, typescript**
 `npm i koa-cola ts-node typescript -g` 
 
-<!-- * **在当前文件夹创建名字为app的新koa-cola项目，创建完整的目录结构，并自动安装依赖** -->
 * **Create a new koa-cola project in the current folder, name `app`. It will automatically create a complete directory structure, and install dependencies**
 `koa-cola new app` 
 
@@ -22,118 +20,5 @@ next: cli.html
 `cd koa-cola-app`
 `koa-cola dev` 
 
-<!-- ### Use the route decorator to create route, and return json data
 
-`api/controllers/any_controller.ts`
-
-```javascript
-var { Controller, Get } = require('koa-cola/client');
-
-@Controller('/api')
-export default class  {
-    @Get('/todo/list')
-    list ( ) {
-        return [
-            'todo1', 'todo2'
-        ]
-    }
-}
-```
-
-### Use the route decorator to create route, and render with the React's pages components.
-
-#### Render static components
-
-`api/controllers/any_controller.ts`
-
-```javascript
-var { Controller, Get, View } = require('koa-cola/client');
-
-@Controller('/')
-export default class  {
-    @Get('index')
-    @View('index')
-    index ( ) {}
-}
-```
-
-`views/pages/index.tsx`
-```javascript
-import * as React from 'react';
-export default function() {
-    return <div>
-        Wow koa-cola!
-    </div>
-};
-```
-
-#### Method to render components with data dependence (1)
-
-`api/controllers/any_controller.ts`
-
-```javascript
-var { Controller, Get, View } = require('koa-cola/client');
-
-@Controller('/')
-export default class  {
-    @Get('index')
-    @View('index')
-    index async () {
-        return {
-            foo : await Promise.resolve('bar')
-        }
-    }
-}
-```
-
-`views/pages/index.tsx`
-
-```javascript
-import * as React from 'react';
-export default function({ctrl : {foo}}) {
-    return <div>
-        {foo}
-    </div>
-};
-```
-
-#### Method to render components with data dependence (2)
-
-`api/controllers/any_controller.ts`
-
-```javascript
-var { Controller, Get, View } = require('koa-cola/client');
-
-@Controller('/')
-export default class  {
-    @Get('index')
-    @View('index')
-    index async () {}
-}
-```
-
-`views/pages/index.tsx`
-
-```javascript
-import * as React from 'react';
-var { Cola } = require('koa-cola/client')
-
-@Cola({
-    initData : {
-        foo : async ({ params, helpers }) => {
-            return await Promise.resolve('bar');
-        }
-    }
-})
-export default class Page extends React.Component<Props, States>   {
-  constructor(props: Props) {
-      super(props);
-  }
-  render() {
-    return <div>
-      <div>{this.props.foo}</div>
-    </div>
-  }
-};
-``` -->
 

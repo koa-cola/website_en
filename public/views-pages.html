@@ -49,7 +49,7 @@
             
               <li>
               
-                 <a href='/universal.html'>Universal developing</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
@@ -219,27 +219,19 @@
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/views-pages.md">修改</a></div>
-      <!-- views/pages下的页面page组件是koa-cola路由router配置服务器端html输入模板，浏览器端的react component输入对象。 -->
-views/pages place page components.
-<!-- 在controller配置路由的时候配置了view装饰器： -->
-in controller, define a method with a `View` decorator:
+      <p>views/pages place page components.</p>
+<p>in controller, define a method with a <code>View</code> decorator:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@Get(<span class="string">'/some_page'</span>)  </div><div class="line">@View(<span class="string">'some_page'</span>)</div><div class="line">some_page () &#123;&#125;</div></pre></td></tr></table></figure>
 <p>when visit <code>/some_page</code> in server side koa-cola will get  <code>views/pages/some_page.tsx</code> as page view to render to client, in client side, webpack will build these router and component into bundle and auto render in browser.</p>
-<!-- 当浏览器访问/some_page时，服务器端koa-cola会选择views/pages/some_page.tsx作为渲染的模板，浏览器端，webpack会把<router>打包到bundle，并且对应的router会配置controller对应的path和page对应的react component。 -->
-<!-- views/pages下如果配置了404.tsx或者500.tsx时，如果koa进入对应的异常，则会使用对应的组件进行渲染。 -->
-when raised a error like 404 or 500, koa-cola will looking for the correspondent file in views/pages like `404.tsx` or `500.tsx`.
-<!-- views/pages/layout.ts是page最终在服务器端渲染的时候生成的html输入模板，如果没有此文件，则直接输入页面组件的html。 -->
-views/pages/layout.ts is as the layout file koa-cola eventually render the page, if the file does not exist, the page component will render directly.
+<p>when raised a error like 404 or 500, koa-cola will looking for the correspondent file in views/pages like <code>404.tsx</code> or <code>500.tsx</code>.</p>
+<p>views/pages/layout.ts is as the layout file koa-cola eventually render the page, if the file does not exist, the page component will render directly.</p>
 <p>layout.ts by default:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">html</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">`</span></div><div class="line"><span class="string">    &lt;!doctype html&gt;</span></div><div class="line"><span class="string">    &lt;html&gt;</span></div><div class="line"><span class="string">        &lt;body id="app"&gt;<span class="subst">$&#123;html&#125;</span>&lt;/body&gt;</span></div><div class="line"><span class="string">    &lt;/html&gt;</span></div><div class="line"><span class="string">    &lt;script src="/bundle.js"&gt;&lt;/script&gt;</span></div><div class="line"><span class="string">        `</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<!-- 服务器端koa-cola在输出html之前会加上store初始化状态在script里面，所以bundle引用需要放在__data之后： -->
-koa-cola render `window.__data` as redux store serialization after ``.
+<p>koa-cola render <code>window.__data</code> as redux store serialization after <code>&lt;/body&gt;</code>.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>$&#123;html&#125;<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">        <span class="built_in">window</span>.__data= &#123;<span class="comment">/*json of redux store*/</span>&#125;</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- bundle js goes after window.__data, only one bundle.js by default, seperate into serveral bundle js if needed --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<!-- react page组件也支持不使用layout的方式选渲染。 -->
-if you don't want a particular page to use layout.ts as the page wrapper, you can use decorator "doNotUseLayout" like this:
+<p>if you don't want a particular page to use layout.ts as the page wrapper, you can use decorator &quot;doNotUseLayout&quot; like this:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123;doNotUseLayout&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line">@doNotUseLayout</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt;   </span>&#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<!-- 这种情况，你可以使用自定义header和bundle的装饰器： -->
-and in this case, you can define the header element and bundle js or other resource like css by using decorator `bundle` and `header` like this:
+<p>and in this case, you can define the header element and bundle js or other resource like css by using decorator <code>bundle</code> and <code>header</code> like this:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123;header, bundle, doNotUseLayout&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line">@doNotUseLayout</div><div class="line">@bundle([</div><div class="line">  <span class="string">"/bundle.js"</span>,</div><div class="line">  <span class="string">"/test.js"</span></div><div class="line">])</div><div class="line">@header(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></div><div class="line">    &lt;meta name="viewport" content="width=device-width" /&gt;</div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></div><div class="line"><span class="xml">&#125;)</span></div><div class="line">class Page extends React.Component&lt;Props, States&gt;   &#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
     </div>
   </div>

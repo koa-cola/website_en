@@ -9,7 +9,6 @@ koa-cola provides two ways to initialize react data.
 
 ## Initialization inside controller
 
-<!-- 初始化数据，数据将会注入到react组件的props.ctrl，如：this.props.ctrl.foo -->
 When initialize data, data will be injected into the react component `props.ctrl`, like:
 
 ```javascript

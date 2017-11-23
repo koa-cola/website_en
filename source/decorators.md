@@ -7,7 +7,6 @@ next: cli.html
 ---
 
 ### Cola decorator
-<!-- 定义redux数据初始化，react-redux组件的mapStateToProps和mapDispatchToProps定义，和redux的reducer定义，装饰器可以同时支持服务器端和浏览器端。 -->
 `Cola` decorator can define redux initial data, `mapStateToProps` and `mapDispatchToProps` for react-redux components, and reducers for redux as well. Decorator support both server-side and browser-side.
 
 ```javascript
@@ -38,7 +37,6 @@ class App extends React.Component<Props, States> {
 ```
 
 ### include decorator
-<!-- 定义当前组件使用的子组件，当子组件使用了Cola装饰器进行数据初始化时候，必须使用include装饰器 -->
 `include` decorator indicate the component contain children components defined by Cola decorator.
 
 ```javascript
@@ -96,7 +94,6 @@ class MultiChildren extends React.Component<Props, States> {
 
 ### doNotUseLayout decorator
 
-<!-- 默认page组件会使用views/pages/layout.ts来渲染，如果不使用可以通过定义这个装饰器 -->
 By default, page component will render with `views/pages/layout.ts`, if we don't need that layout, you can use this decorator:
 
 ```javascript
@@ -115,7 +112,6 @@ class Page extends React.Component<Props, States>   {
 
 ### header & bundle decorator
 
-<!-- 当使用doNotUseLayout装饰器时，如果需要自定义插入header和js bundle，可以使用这两个装饰器 -->
 When using `doNotUseLayout` decorator, if you need to custom header and resource, you can use these two decorators.
 
 ```javascript

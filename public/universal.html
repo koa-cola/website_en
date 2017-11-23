@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charSet='utf-8' />
-  <title>ko-cola - Universal developing</title>
+  <title>ko-cola - Universal</title>
   <link href='/css/docs.css' rel='stylesheet'>
   <link href='/css/github-markdown.css' rel='stylesheet'>
   <script>
@@ -49,7 +49,7 @@
             
               <li>
               
-                 <a href='/universal.html' class='active'>Universal developing</a>
+                 <a href='/universal.html' class='active'>Universal</a>
               
               </li>
             
@@ -212,59 +212,45 @@
   </div>
   <div class='page'>
     <div class='page-content'>
-      <h1>Universal developing</h1>
+      <h1>Universal</h1>
       <div style="
           float: right;
           top: -60px;
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/universal.md">修改</a></div>
-      <!-- ### 前后端router -->
-### front end and back end router
-<!-- 通过controller生成server端的react-router，并且也生成client端的react-redux的Provider(里面还是封装了react-router) -->
-koa-cola auto generate both front end and back ends router
-<p>in controller:</p>
+      <h3>front end and back end router</h3>
+<p>koa-cola auto generate both front end and back end router</p>
+<p>controller:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@Controller(<span class="string">''</span>) </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooController</span> </span>&#123;</div><div class="line">    @Get(<span class="string">'/'</span>)</div><div class="line">    @View(<span class="string">'index'</span>)</div><div class="line">    index(@Ctx() ctx) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'&lt;h1&gt;hello koa-cola !&lt;/h1&gt;'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<!-- 自动生成的server端的react-router: -->
-react-router will be auto-generated like this:
+<p>react-router will be auto-generated like this:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Router</span> <span class="attr">...</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">"/"</span> <span class="attr">component</span>=<span class="string">&#123;IndexComponent&#125;</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Router</span>&gt;</span></div></pre></td></tr></table></figure>
-<!-- 通过react-router的match到对应的route后，再通过Provider，最终渲染出html： -->
-In server side after react-router match the react component by a specify route, eventually render view html:
+<p>In server side after react-router match the react component by a specify route, eventually render view html:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span> <span class="attr">key</span>=<span class="string">"provider"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">MatchReduxComponent</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></div></pre></td></tr></table></figure>
-<!-- client端Provider则是: -->
-Client-side will auto match the route and component, and auto render in browser.
+<p>Client-side will auto match the route and component, and auto render in browser.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span> <span class="attr">key</span>=<span class="string">"provider"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Router</span> <span class="attr">...</span> &gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">"/"</span> <span class="attr">component</span>=<span class="string">&#123;IndexComponent&#125;</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">Router</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></div></pre></td></tr></table></figure>
-<!-- ### 前后端redux -->
-### front end and back end redux
+<h3>front end and back end redux</h3>
 <p>koa-cola integrates the react-redux in both sides.</p>
 <p>react-redux component:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">const</span> Index = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;some_props&#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Wow koa-cola!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</div><div class="line">    mapStateToProps,</div><div class="line">    mapDispatchToProps</div><div class="line">)(Index)</div></pre></td></tr></table></figure>
-<!-- 或者是经过Cola装饰器封装的react-redux: -->
-Or use the react-redux base `@Cola` decorator:
+<p>Or use the react-redux base <code>@Cola</code> decorator:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123;Cola&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"></div><div class="line">@Cola(&#123;</div><div class="line">    initData : &#123;</div><div class="line">        foo : <span class="keyword">async</span> (&#123; params, helpers&#125;) =&gt; &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">await</span> <span class="built_in">Promise</span>.resolve(<span class="string">'this will go to this.props.some_props'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    mapStateToProps,</div><div class="line">    mapDispatchToProps</div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt;   </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;this.props.foo&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Index</div></pre></td></tr></table></figure>
-<!-- 在client可以使用 上面所有形式的 react组件 的redux数据流开发模式，并且没有server端只能在render前使用的限制，可以在组件的生命周期任何时候使用。 -->
-The client side and server side redux can use the any type of the component that mentioned above, and used in any part of component lifecycle.
-<!-- 但是client端的redux store会依赖server端， 如果server端的store已经经过一系列的数据流操作，那么将会在render阶段之前的数据保存起来，作为client端react-redux的初始化数据（详细查看[redux的createStore](http://redux.js.org/docs/api/createStore.html)），这样就可以完美地将redux数据流从server端无缝衔接到client端。 -->
-However, the client side of the redux store will depend on the server side, if the store of server side has been running a series of data stream operations, store data will be saved and as the client side react-redux initial data in `createStore`. (See [redux createStore](http://redux.js.org/docs/api/createStore.html) for detail). So this will magically seamlessly connect the redux data stream from the server side to the client side.
+<p>The client side and server side redux can use the any type of the component that mentioned above, and used in any part of component lifecycle.</p>
+<p>However, the client side of the redux store will depend on the server side, if the store of server side has been running a series of data stream operations, store data will be saved and as the client side react-redux initial data in <code>createStore</code>. (See <a href="http://redux.js.org/docs/api/createStore.html" target="_blank" rel="external">redux createStore</a> for detail). So this will magically seamlessly connect the redux data stream from the server side to the client side.</p>
 <h3>Reuse react component on front &amp; back ends</h3>
-<!-- 从前面react-router和react-redux可以看到react组件是可以完全前后端复用，在前端可以使用react所有功能，但是在server端只能使用render之前的生命周期，包括： -->
-the above mentioned react-router, react-redux and react components can be fully reused on both side ends. Frontend can use all the react component features.
-However, we can only use the lifecycle before render on the server side, including:
+<p>the above mentioned react-router, react-redux and react components can be fully reused on both side ends. Frontend can use all the react component features.<br>
+However, we can only use the lifecycle before render on the server side, including:</p>
 <ul>
 <li>constructor()</li>
 <li>componentWillMount()</li>
 <li>render()</li>
 </ul>
-<!-- 如果你的组件会依赖浏览器的dom，如果是在以上生命周期里面调用，则在server端渲染时出错，所以避免出错，你需要判断当前环境，比如：`if(typeof window != 'undefined')`，或者你可以使用这个类似[模拟浏览器端方案](https://github.com/airbnb/enzyme/blob/master/docs/guides/jsdom.md)。 -->
-If your component will depend on the browser's DOM, and called in the above three lifecycle parts, the server-side render will occur error. So to avoid mistakes, you need to determine the current environment, such as:`if(typeof window != 'undefined')` , Or you can use [simulate browser side scenario](https://github.com/airbnb/enzyme/blob/master/docs/guides/jsdom.md) or something like that.
-<!-- ### http api和请求fetch -->
-### http api and fetching
-<!-- 在前面介绍，也说到过可以使用koa-cola定义的api基类来创建自己的api类，并使用api的fetch方法获取数据： -->
-As mentioned earlier, it's also possible to create your own api classes using the api base class defined by koa-cola and get the data by using the these apis:
+<p>If your component will depend on the browser's DOM, and called in the above three lifecycle parts, the server-side render will occur error. So to avoid mistakes, you need to determine the current environment, such as:<code>if(typeof window != 'undefined')</code> , Or you can use <a href="https://github.com/airbnb/enzyme/blob/master/docs/guides/jsdom.md" target="_blank" rel="external">simulate browser side scenario</a> or something like that.</p>
+<h3>http api and fetching</h3>
+<p>As mentioned earlier, it's also possible to create your own api classes using the api base class defined by koa-cola and get the data by using the these apis:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> api = <span class="keyword">new</span> GetTodoList(&#123;&#125;);</div><div class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> api.fetch(helpers.ctx);</div></pre></td></tr></table></figure>
-<!-- 上面代码可以兼容服务器端和客户端，ajax库使用了[axios](https://github.com/mzabriskie/axios)，比如 [todolist demo](https://github.com/koa-cola/todolist) 有个react组件定义： -->
-The above codes can be run both in server-side and client-side, koa-cola use [axios](https://github.com/mzabriskie/axios) as ajax library.
-For example:
+<p>The above codes can be run both in server-side and client-side, koa-cola use <a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">axios</a> as ajax library.<br>
+For example:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">@Cola(&#123;</div><div class="line">    initData : &#123;</div><div class="line">        todosData : <span class="keyword">async</span> (&#123; params, helpers, <span class="attr">store</span>: &#123; dispatch &#125; &#125;) =&gt; &#123;</div><div class="line">            <span class="keyword">const</span> api = <span class="keyword">new</span> GetTodoList(&#123;&#125;);</div><div class="line">            <span class="keyword">const</span> data = <span class="keyword">await</span> api.fetch(helpers.ctx);</div><div class="line">            <span class="keyword">return</span> data.result.result;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Page;</div></pre></td></tr></table></figure>
 
     </div>

@@ -49,7 +49,7 @@
             
               <li>
               
-                 <a href='/universal.html'>Universal developing</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
@@ -219,15 +219,11 @@
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/views-app.md">修改</a></div>
-      <!-- views/app.tsx是浏览器端bundle的webpack入口文件，app.tsx可以手动维护，也可以由ko-cola生成。 -->
-views/app.tsx is the entry file of webpack building, you can maintain the file if needed, and in this case it is better to use another file as the entry file, because if you run `koa-cola build` or `koa-cola dev`, will override the file.
-<!-- 你可以手动维护这个文件，手动创建Provider和Router，并提供store： -->
-custom your own webpack entry file with store provided like:
+      <p>views/app.tsx is the entry file of webpack building, you can maintain the file if needed, and in this case it is better to use another file as the entry file, because if you run <code>koa-cola build</code> or <code>koa-cola dev</code>, will override the file.</p>
+<p>custom your own webpack entry file with store provided like:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> store = ...</div><div class="line">&lt;Provider store=&#123;store&#125; key=<span class="string">"provider"</span>&gt;</div><div class="line">    &lt;Router history=&#123;browserHistory&#125;&gt;</div><div class="line">        &lt;Route ... /&gt;</div><div class="line">    &lt;<span class="regexp">/Router&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>Provider&gt;</div></pre></td></tr></table></figure>
-<!-- 如果要使用服务器端的redux初始化数据，你需要正确的创建store： -->
-if you want to seamlessly use the store initialized by server side, you need to create store with the initial data by `window.__data` rendered by koa-cola:
+<p>if you want to seamlessly use the store initialized by server side, you need to create store with the initial data by <code>window.__data</code> rendered by koa-cola:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; ReduxAsyncConnect, asyncConnect, reducer &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"><span class="comment">// __data is the server side redux store serialization</span></div><div class="line"><span class="keyword">const</span> store = createStore(combineReducers(<span class="built_in">Object</span>.assign(&#123; <span class="attr">reduxAsyncConnect</span>: reducer &#125;, ...custom_reducer))</div><div class="line">    , (<span class="built_in">window</span> <span class="keyword">as</span> any).__data);</div></pre></td></tr></table></figure>
-<!-- 如果使用`koa-cola build`来build bundle，那么koa-cola会自动生成app.tsx，所以建议使用koa-cola的生成的方式来维护app.tsx。 -->
 
     </div>
   </div>

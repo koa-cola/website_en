@@ -49,7 +49,7 @@
             
               <li>
               
-                 <a href='/universal.html'>Universal developing</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
@@ -219,62 +219,17 @@
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/installation.md">修改</a></div>
-      <!-- koa-cola支持node.js的版本包括7.6和8，建议使用8，因为8.0使用的最新的v8版本，而且8.0会在[今年10月正式激活LTS](https://github.com/nodejs/LTS)，因为koa-cola的async/await是原生方式使用没有经过transform，所以不支持node7.6以下的node版本。 -->
-<h2>Create a project</h2>
+      <h2>Create a project</h2>
 <ul>
-<li><strong>install global koa-cola, ts-node, typescript</strong><br>
-<code>npm i koa-cola ts-node typescript -g</code></li>
-</ul>
-<!-- * **在当前文件夹创建名字为app的新koa-cola项目，创建完整的目录结构，并自动安装依赖** -->
-* **Create a new koa-cola project in the current folder, name `app`. It will automatically create a complete directory structure, and install dependencies**
-`koa-cola new app` 
-<ul>
-<li><strong>Start the project as development model, build webpack bundle, launch the project, and open the browser, and watch the specify files changes. When the files are modified, bundled js and ssr server-side rendering will hot reload</strong><br>
+<li><p><strong>install global koa-cola, ts-node, typescript</strong><br>
+<code>npm i koa-cola ts-node typescript -g</code></p></li>
+<li><p><strong>Create a new koa-cola project in the current folder, name <code>app</code>. It will automatically create a complete directory structure, and install dependencies</strong><br>
+<code>koa-cola new app</code></p></li>
+<li><p><strong>Start the project as development model, build webpack bundle, launch the project, and open the browser, and watch the specify files changes. When the files are modified, bundled js and ssr server-side rendering will hot reload</strong><br>
 <code>cd koa-cola-app</code><br>
-<code>koa-cola dev</code></li>
+<code>koa-cola dev</code></p></li>
 </ul>
-<!-- ### Use the route decorator to create route, and return json data
-<p><code>api/controllers/any_controller.ts</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> &#123; Controller, Get &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"></div><div class="line">@Controller(<span class="string">'/api'</span>)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span>  </span>&#123;</div><div class="line">    @Get(<span class="string">'/todo/list'</span>)</div><div class="line">    list ( ) &#123;</div><div class="line">        <span class="keyword">return</span> [</div><div class="line">            <span class="string">'todo1'</span>, <span class="string">'todo2'</span></div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3>Use the route decorator to create route, and render with the React's pages components.</h3>
-<h4>Render static components</h4>
-<p><code>api/controllers/any_controller.ts</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> &#123; Controller, Get, View &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"></div><div class="line">@Controller(<span class="string">'/'</span>)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span>  </span>&#123;</div><div class="line">    @Get(<span class="string">'index'</span>)</div><div class="line">    @View(<span class="string">'index'</span>)</div><div class="line">    index ( ) &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>views/pages/index.tsx</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;</div><div class="line">        Wow koa-cola!</div><div class="line">    &lt;/div&gt;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h4>Method to render components with data dependence (1)</h4>
-<p><code>api/controllers/any_controller.ts</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> &#123; Controller, Get, View &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"></div><div class="line">@Controller(<span class="string">'/'</span>)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span>  </span>&#123;</div><div class="line">    @Get(<span class="string">'index'</span>)</div><div class="line">    @View(<span class="string">'index'</span>)</div><div class="line">    index <span class="keyword">async</span> () &#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            foo : <span class="keyword">await</span> <span class="built_in">Promise</span>.resolve(<span class="string">'bar'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>views/pages/index.tsx</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">&#123;ctrl : &#123;foo&#125;&#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;</div><div class="line">        &#123;foo&#125;</div><div class="line">    &lt;/div&gt;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h4>Method to render components with data dependence (2)</h4>
-<p><code>api/controllers/any_controller.ts</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> &#123; Controller, Get, View &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line"></div><div class="line">@Controller(<span class="string">'/'</span>)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span>  </span>&#123;</div><div class="line">    @Get(<span class="string">'index'</span>)</div><div class="line">    @View(<span class="string">'index'</span>)</div><div class="line">    index <span class="keyword">async</span> () &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>views/pages/index.tsx</code></p>
-<pre><code class="language-javascript">import * as React from 'react';
-var { Cola } = require('koa-cola/client')
 
-@Cola({
-    initData : {
-        foo : async ({ params, helpers }) =&gt; {
-            return await Promise.resolve('bar');
-        }
-    }
-})
-export default class Page extends React.Component&lt;Props, States&gt;   {
-  constructor(props: Props) {
-      super(props);
-  }
-  render() {
-    return &lt;div&gt;
-      &lt;div&gt;{this.props.foo}&lt;/div&gt;
-    &lt;/div&gt;
-  }
-};
-``` --&gt;
-
-</code></pre>
--->
     </div>
   </div>
   <div class='switch-page'>

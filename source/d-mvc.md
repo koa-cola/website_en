@@ -6,12 +6,10 @@ prev: universal.html
 next: installation.html
 ---
 
-<!-- koa-cola可以使用es7的decorator装饰器开发模式来写mvc，controller是必须用提供的decorator来开发（因为涉及到router相关的定义），model和view层则没有强制需要demo所演示的decorator来开发。 -->
 In koa-cola we can write mvc by using es7's decorator. Controller have to be defined with the provided decorator (as it relates to the router related definition), and the model and view layers are not forced to be defined by the decorator as the demo following.
 
 ### Controller
     
-<!-- 使用decorator装饰器来注入相关依赖，路由层的decorators包括router、中间件、response、view，响应阶段的decorators包括koa.Context、param、response、request等，比如以下例子： -->
 Use decorator to inject dependencies. In the router layer, the decorators include router, middleware, response and view. 
 In the response phase, the decorators including koa.Context, param, response, request, etc. For example. The following example:
 

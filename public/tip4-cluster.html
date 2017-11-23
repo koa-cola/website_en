@@ -49,7 +49,7 @@
             
               <li>
               
-                 <a href='/universal.html'>Universal developing</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
@@ -219,8 +219,7 @@
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/tip4-cluster.md">修改</a></div>
-      <!-- 如果想使用cluster模式，koa-cola提供了pm2的配置文件，使用cli新建项目时候会生成这个配置文件，启动方式使用：`pm2 start pm2.config.js` -->
-If you want to use cluster mode, koa-cola provide configuration file of pm2. change pm2 configuration if needed and running this to start:
+      <p>If you want to use cluster mode, koa-cola provide configuration file of pm2. change pm2 configuration if needed and running this to start:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start pm2.config.js</div></pre></td></tr></table></figure>
 <p>pm2.config.js</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    name: <span class="string">'koa-cola-app'</span>,</div><div class="line">    script: __dirname + <span class="string">'/app.ts'</span>,</div><div class="line">    instances: <span class="number">2</span>,</div><div class="line">    interpreter: <span class="string">'ts-node'</span>,</div><div class="line">    exec_mode: <span class="string">'cluster'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>

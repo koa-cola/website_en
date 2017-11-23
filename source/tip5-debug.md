@@ -6,7 +6,6 @@ prev: tip4-cluster.html
 next: tip6-compile.html
 ---
 
-<!-- 如果需要调试koa-cola项目，需要添加两个依赖`npm i ts-node typescript -S`，然后在vscode新建调试配置： -->
 When debugging a koa-cola project, we need to add two dependencies: 
 
 ```shell
@@ -32,7 +31,6 @@ and add debug config in vscode:
     "internalConsoleOptions": "openOnSessionStart"
 }
 ```
-<!-- 便可享受vscode的调试ts的乐趣。
 
 另外，koa-cola加了redux调试支持，你也可以使用chrome的redux插件调试： -->
 Then we can debug ts file via vscode.

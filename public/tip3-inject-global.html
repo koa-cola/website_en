@@ -49,7 +49,7 @@
             
               <li>
               
-                 <a href='/universal.html'>Universal developing</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
@@ -219,8 +219,7 @@
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/tip3-inject-global.md">修改</a></div>
-      <!-- 全局依赖注入，有时候在其他 非应用运行时引用koa-cola里面的文件时，会因为文件依赖`app.xxx`而出错，使用inject global方式，可以实现第三方非koa-cola的require。 -->
-Somehow we want to require koa-cola project files but without running the project, if the file contain global refer which base on run-time like `app.xxx`, this will thow a exception, in this particular situation we need use `reqInject` to inject `global.app`.
+      <p>Somehow we want to require koa-cola project files but without running the project, if the file contain global refer which base on run-time like <code>app.xxx</code>, this will thow a exception, in this particular situation we need use <code>reqInject</code> to inject <code>global.app</code>.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; reqInject &#125; <span class="keyword">from</span> <span class="string">'koa-cola'</span></div><div class="line"><span class="keyword">let</span> user;</div><div class="line">reqInject(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// after injection, we can require any files inside project.</span></div><div class="line">    user = <span class="built_in">require</span>(<span class="string">'./api/models/user'</span>).default </div><div class="line">    <span class="comment">// or get the global variable directly</span></div><div class="line">    <span class="keyword">let</span> config = app.config;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
     </div>
   </div>

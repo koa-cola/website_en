@@ -7,11 +7,9 @@ next: tip3-inject-global.html
 ---
 
 ## About the props key name conflicts between `Cola` and `mapStateToProps`
-<!-- 使用Cola装饰器进行数据初始化，如果这个key和自定义的mapStateToProps的props属性有冲突，那么key定义的数据将会更优先 -->
 Using `Cola` decorators for data initialization, it's better to use the different key name of `initData` and `mapStateToProps`.
 If the key name in `initData` conflicts with the name defined in `mapStateToProps` , data in `initData` will be prior than `mapStateToProps`.
 
-<!-- 下面例子，定义了初始化的props属性foo，然后mapStateToProps也定义了返回的props.foo的新value，但是，其实dispatch后props.foo还是最开始的"bar"，而不是"bar again"。 -->
 The following example defines the data `foo`, and `mapStateToProps` also defines `foo`. and execute `dispatch` to change `foo` value to `bar again`, but as we had set `foo` in the `initData`, the dispatching action will not work, `foo` value will still be `bar`.
 
 ```javascript
