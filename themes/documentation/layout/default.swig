@@ -57,7 +57,7 @@
           top: -60px;
           position: relative;
           margin-right: 10px;
-      "><a href="https://github.com/koa-cola/website/blob/master/source/{{page.id}}.md">修改</a></div>
+      "><a href="https://github.com/koa-cola/website/blob/master/source/{{page.id}}.md">Edit</a></div>
       {{page.content}}
     </div>
   </div>

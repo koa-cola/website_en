@@ -31,9 +31,7 @@ and add debug config in vscode:
     "internalConsoleOptions": "openOnSessionStart"
 }
 ```
-<!-- 便可享受vscode的调试ts的乐趣。
-
-另外，koa-cola加了redux调试支持，你也可以使用chrome的redux插件调试： -->
+<!-- 便可享受vscode的调试ts的乐趣。另外，koa-cola加了redux调试支持，你也可以使用chrome的redux插件调试： -->
 Then we can debug ts via vscode.
 
 In addition, koa-cola has integrate redux debugging supporter, we can use the chrome's redux plug-in to perform debugging:
