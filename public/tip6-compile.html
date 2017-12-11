@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charSet='utf-8' />
-  <title>ko-cola - 代码编译</title>
-  <link href='/doc/css/docs.css' rel='stylesheet'>
-  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <title>ko-cola - Compiling</title>
+  <link href='/css/docs.css' rel='stylesheet'>
+  <link href='/css/github-markdown.css' rel='stylesheet'>
   <script>
     window.onunload = function(){
       var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
@@ -26,36 +26,36 @@
     <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
       
         <ul class='nav'>
-          <span>介绍</span>
+          <span>Introduction</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/index.html'>koa-cola是什么?</a>
+                 <a href='/index.html'>What is koa-cola?</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/ssr.html'>SSR和SPA</a>
+                 <a href='/ssr.html'>SSR & SPA</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/compare-next.html'>对比next.js</a>
+                 <a href='/compare-next.html'>Compare with next.js</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/d-mvc.html'>decorator的mvc开发模式</a>
+                 <a href='/d-mvc.html'>MVC pattern with decorator</a>
               
               </li>
             
@@ -63,18 +63,24 @@
         </ul>
       
         <ul class='nav'>
-          <span>使用方法</span>
+          <span>Overview</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/installation.html'>如何使用</a>
+                 <a href='/installation.html'>Getting Started</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/cli.html'>Cli命令</a>
+                 <a href='/decorators.html'>Decorators</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/cli.html'>Cli commander</a>
               
               </li>
             
@@ -82,12 +88,12 @@
         </ul>
       
         <ul class='nav'>
-          <span>在线演示</span>
+          <span>Online demo</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+                 <a href='http://www.koa-cola.com:3000'>Todolist example</a>
               
               </li>
             
@@ -100,37 +106,37 @@
             
               <li>
               
-                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+                 <a href='/tip1-react-init.html'>React component data initialization</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip2-redux.html'>redux-connect组件的redux坑</a>
+                 <a href='/tip2-redux.html'>Using redux in Cola</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+                 <a href='/tip3-inject-global.html'>Inject global</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip4-cluster.html'>cluster集群模式</a>
+                 <a href='/tip4-cluster.html'>Cluster mode</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip5-debug.html'>调试</a>
+                 <a href='/tip5-debug.html'>Debugging</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip6-compile.html' class='active'>代码编译</a>
+                 <a href='/tip6-compile.html' class='active'>Compiling</a>
               
               </li>
             
@@ -138,28 +144,28 @@
         </ul>
       
         <ul class='nav'>
-          <span>目录结构</span>
+          <span>Project construction</span>
           <ul class='nav'>
             
               <li>
               
-                <a href='/doc/api.html' style="padding:0px">api</a>
+                <a href='/api.html' style="padding:0px">api</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/api-controllers.html'>controllers</a>
+                      <a href='/api-controllers.html'>controllers</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-models.html'>models</a>
+                      <a href='/api-models.html'>models</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-schemas.html'>schemas</a>
+                      <a href='/api-schemas.html'>schemas</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-responses.html'>responses</a>
+                      <a href='/api-responses.html'>responses</a>
                     </li>
                   
                 </ul>
@@ -168,31 +174,31 @@
             
               <li>
               
-                 <a href='/doc/config.html'>config</a>
+                 <a href='/config.html'>config</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/public.html'>public</a>
+                 <a href='/public.html'>public</a>
               
               </li>
             
               <li>
               
-                <a href='/doc/views.html' style="padding:0px">views</a>
+                <a href='/views.html' style="padding:0px">views</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/views-pages.html'>pages</a>
+                      <a href='/views-pages.html'>pages</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-app.html'>app.tsx</a>
+                      <a href='/views-app.html'>app.tsx</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-components.html'>components</a>
+                      <a href='/views-components.html'>components</a>
                     </li>
                   
                 </ul>
@@ -206,32 +212,29 @@
   </div>
   <div class='page'>
     <div class='page-content'>
-      <h1>代码编译</h1>
+      <h1>Compiling</h1>
       <div style="
           float: right;
           top: -60px;
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/tip6-compile.md">修改</a></div>
-      <h3>客户端</h3>
-<p>前端的bundle build使用webpack来构建，使用cli命令创建项目，会自动生成<a href="https://github.com/hcnode/koa-cola/blob/master/template/webpack.config.js" target="_blank" rel="external">webpack配置</a><br>
-ts文件的loader使用了<a href="https://github.com/s-panferov/awesome-typescript-loader" target="_blank" rel="external">awesome-typescript-loader</a>，并配置了使用babel，加入babel-polyfill到bundle，可以兼容ie9+。</p>
-<p>webpack的入口tsx文件在项目里面的<code>view/app.tsx</code>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> IndexController <span class="keyword">from</span> <span class="string">'../api/controllers/IndexController'</span>;</div><div class="line"><span class="comment">// 以下是3个view(react component)的入口。</span></div><div class="line"><span class="keyword">import</span> index <span class="keyword">from</span> <span class="string">'./pages/index'</span>;</div><div class="line"><span class="keyword">import</span> officialDemo <span class="keyword">from</span> <span class="string">'./pages/officialDemo'</span>;</div><div class="line"><span class="keyword">import</span> colastyleDemo <span class="keyword">from</span> <span class="string">'./pages/colastyleDemo'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> &#123; createProvider &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola'</span>);</div><div class="line"><span class="comment">// 使用koa-cola提供的createProvider会自动建立路由，如果手动使用官方的Provider，则需要开发者手动写router</span></div><div class="line"><span class="keyword">const</span> Provider = createProvider([IndexController], &#123;</div><div class="line">  index,</div><div class="line">  officialDemo,</div><div class="line">  colastyleDemo</div><div class="line">&#125;);</div><div class="line"></div><div class="line">render(&lt;Provider /&gt;, document.getElementById('app'));</div></pre></td></tr></table></figure>
-<p>wepack build 新建默认的项目得到的bundle的大小有400K，依赖的库组成如下图：<br>
-<img src="https://github.com/hcnode/koa-cola/raw/master/screenshots/bundle.png" alt="Drawing" width="800"></p>
-<p>webpack的配置文件默认加了四个IgnorePlugin插件，因为有些文件是前后端都会使用，所以需要忽略服务器端的require。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 以下两个是给服务器端使用，不能打包到webpack</span></div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/\.\/src\/app/</span>),</div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/\.\/src\/util\/injectGlobal/</span>),</div><div class="line"><span class="comment">// 以下两个是controller引用的，也是服务器端使用，也不能打包到webpack，如果你的controller也有服务器端使用的库，也必须要加IgnorePlugin插件</span></div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/koa$/</span>),</div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/koa-body$/</span>),</div></pre></td></tr></table></figure>
-<h3>服务器端</h3>
-<p>koa-cola框架使用typescript编写，生产环境的代码是使用最新的js标准语法(需node7.6及以上)，即只编译代码的<code>import export</code>、ts语法，并未编译es6或es7（比如async/await），所以将不支持低版本的node。</p>
-<p>如需在低版本node的环境下使用，请您自己修改<a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank" rel="external">typescript编译设置</a>，编译koa-cola框架的代码。</p>
-<p>如果在node.js 7.6及以上的环境下运行，则可以直接引用，用过ts-node运行（cli运行命令都是使用ts-node），甚至可以直接<a href="https://github.com/TypeStrong/ts-node/issues/104" target="_blank" rel="external">线上使用</a></p>
+      <h3>Browser side</h3>
+<p>ts文件的loader使用了<a href="https://github.com/s-panferov/awesome-typescript-loader" target="_blank" rel="external">awesome-typescript-loader</a>，并配置了使用babel，加入babel-polyfill到bundle，可以兼容ie9+。 --&gt;<br>
+The front-end bundle is built by webpack. When using the cli command to create a koa-cola project, it will be automatically generated <a href="https://github.com/hcnode/koa-cola/blob/master/template/webpack.config.js" target="_blank" rel="external">webpack config</a><br>
+We use <a href="https://github.com/s-panferov/awesome-typescript-loader" target="_blank" rel="external">awesome-typescript-loader</a> as ts loader, and babel, add <code>babel-polyfill</code> to bundle.</p>
+<p>The entry of webpack is <code>view/app.tsx</code> in the project by default.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> IndexController <span class="keyword">from</span> <span class="string">'../api/controllers/IndexController'</span>;</div><div class="line"><span class="comment">// The following 3 modules are the entrance of react components.</span></div><div class="line"><span class="keyword">import</span> index <span class="keyword">from</span> <span class="string">'./pages/index'</span>;</div><div class="line"><span class="keyword">import</span> officialDemo <span class="keyword">from</span> <span class="string">'./pages/officialDemo'</span>;</div><div class="line"><span class="keyword">import</span> colastyleDemo <span class="keyword">from</span> <span class="string">'./pages/colastyleDemo'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> &#123; createProvider &#125; = <span class="built_in">require</span>(<span class="string">'koa-cola'</span>);</div><div class="line"><span class="comment">// using createProvider provided by koa-cola will automatically create router，</span></div><div class="line"><span class="comment">// If want to the official Provider, we will need to write router by ourselves</span></div><div class="line"><span class="keyword">const</span> Provider = createProvider([IndexController], &#123;</div><div class="line">  index,</div><div class="line">  officialDemo,</div><div class="line">  colastyleDemo</div><div class="line">&#125;);</div><div class="line"></div><div class="line">render(&lt;Provider /&gt;, document.getElementById('app'));</div></pre></td></tr></table></figure>
+<p>Run <code>webpack build</code> to build the default project, it will generate a bundle of size at about 400K. Dependent library composition as shown below:</p>
+<p><img src="https://github.com/hcnode/koa-cola/raw/master/screenshots/bundle.png" alt="Drawing" width="800"></p>
+<p>The webpack configuration file has four IgnorePlugin plugins by default, because some files are required at both front and server side, so we need to ignore the server-side requires.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The following two are for server-side use, no need package into webpack</span></div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/\.\/src\/app/</span>),</div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/\.\/src\/util\/injectGlobal/</span>),</div><div class="line"><span class="comment">// The following two are controller references, used on the server-side, so must be ignored by webpack. </span></div><div class="line"><span class="comment">// If your controller also has a server-side library, you must also add IgnorePlugin plug-in.</span></div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/koa$/</span>),</div><div class="line"><span class="keyword">new</span> webpack.IgnorePlugin(<span class="regexp">/koa-body$/</span>),</div></pre></td></tr></table></figure>
 
     </div>
   </div>
   <div class='switch-page'>
     
-      <a class='previous' href='/doc/tip5-debug.html'>Previous</a>
+      <a class='previous' href='/tip5-debug.html'>Previous</a>
     
     
   </div>

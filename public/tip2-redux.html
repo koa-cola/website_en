@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charSet='utf-8' />
-  <title>ko-cola - redux-connect组件的redux坑</title>
-  <link href='/doc/css/docs.css' rel='stylesheet'>
-  <link href='/doc/css/github-markdown.css' rel='stylesheet'>
+  <title>ko-cola - Using redux in Cola</title>
+  <link href='/css/docs.css' rel='stylesheet'>
+  <link href='/css/github-markdown.css' rel='stylesheet'>
   <script>
     window.onunload = function(){
       var scollTop = document.getElementsByClassName('menu-nav')[0].scrollTop;
@@ -26,36 +26,36 @@
     <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
       
         <ul class='nav'>
-          <span>介绍</span>
+          <span>Introduction</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/index.html'>koa-cola是什么?</a>
+                 <a href='/index.html'>What is koa-cola?</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/ssr.html'>SSR和SPA</a>
+                 <a href='/ssr.html'>SSR & SPA</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/compare-next.html'>对比next.js</a>
+                 <a href='/compare-next.html'>Compare with next.js</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/universal.html'>Universal 前后端全栈开发</a>
+                 <a href='/universal.html'>Universal</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/d-mvc.html'>decorator的mvc开发模式</a>
+                 <a href='/d-mvc.html'>MVC pattern with decorator</a>
               
               </li>
             
@@ -63,18 +63,24 @@
         </ul>
       
         <ul class='nav'>
-          <span>使用方法</span>
+          <span>Overview</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='/doc/installation.html'>如何使用</a>
+                 <a href='/installation.html'>Getting Started</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/cli.html'>Cli命令</a>
+                 <a href='/decorators.html'>Decorators</a>
+              
+              </li>
+            
+              <li>
+              
+                 <a href='/cli.html'>Cli commander</a>
               
               </li>
             
@@ -82,12 +88,12 @@
         </ul>
       
         <ul class='nav'>
-          <span>在线演示</span>
+          <span>Online demo</span>
           <ul class='nav'>
             
               <li>
               
-                 <a href='http://www.koa-cola.com:3000'>todolist例子</a>
+                 <a href='http://www.koa-cola.com:3000'>Todolist example</a>
               
               </li>
             
@@ -100,37 +106,37 @@
             
               <li>
               
-                 <a href='/doc/tip1-react-init.html'>初始化react组件数据</a>
+                 <a href='/tip1-react-init.html'>React component data initialization</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip2-redux.html' class='active'>redux-connect组件的redux坑</a>
+                 <a href='/tip2-redux.html' class='active'>Using redux in Cola</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip3-inject-global.html'>Inject global全局注入</a>
+                 <a href='/tip3-inject-global.html'>Inject global</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip4-cluster.html'>cluster集群模式</a>
+                 <a href='/tip4-cluster.html'>Cluster mode</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip5-debug.html'>调试</a>
+                 <a href='/tip5-debug.html'>Debugging</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/tip6-compile.html'>代码编译</a>
+                 <a href='/tip6-compile.html'>Compiling</a>
               
               </li>
             
@@ -138,28 +144,28 @@
         </ul>
       
         <ul class='nav'>
-          <span>目录结构</span>
+          <span>Project construction</span>
           <ul class='nav'>
             
               <li>
               
-                <a href='/doc/api.html' style="padding:0px">api</a>
+                <a href='/api.html' style="padding:0px">api</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/api-controllers.html'>controllers</a>
+                      <a href='/api-controllers.html'>controllers</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-models.html'>models</a>
+                      <a href='/api-models.html'>models</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-schemas.html'>schemas</a>
+                      <a href='/api-schemas.html'>schemas</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/api-responses.html'>responses</a>
+                      <a href='/api-responses.html'>responses</a>
                     </li>
                   
                 </ul>
@@ -168,31 +174,31 @@
             
               <li>
               
-                 <a href='/doc/config.html'>config</a>
+                 <a href='/config.html'>config</a>
               
               </li>
             
               <li>
               
-                 <a href='/doc/public.html'>public</a>
+                 <a href='/public.html'>public</a>
               
               </li>
             
               <li>
               
-                <a href='/doc/views.html' style="padding:0px">views</a>
+                <a href='/views.html' style="padding:0px">views</a>
                 <ul class='nav' style="padding-top:0px">
                   
                     <li style="height:28px">
-                      <a href='/doc/views-pages.html'>pages</a>
+                      <a href='/views-pages.html'>pages</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-app.html'>app.tsx</a>
+                      <a href='/views-app.html'>app.tsx</a>
                     </li>
                   
                     <li style="height:28px">
-                      <a href='/doc/views-components.html'>components</a>
+                      <a href='/views-components.html'>components</a>
                     </li>
                   
                 </ul>
@@ -206,26 +212,28 @@
   </div>
   <div class='page'>
     <div class='page-content'>
-      <h1>redux-connect组件的redux坑</h1>
+      <h1>Using redux in Cola</h1>
       <div style="
           float: right;
           top: -60px;
           position: relative;
           margin-right: 10px;
       "><a href="https://github.com/koa-cola/website/blob/master/source/tip2-redux.md">修改</a></div>
-      <p>使用redux-connect进行数据初始化，如果这个key和自定义的mapStateToProps的props属性有冲突，那么key定义的数据将会更优先</p>
-<p>下面例子，定义了初始化的props属性foo，然后mapStateToProps也定义了返回的props.foo的新value，但是，其实dispatch后props.foo还是最开始的&quot;bar&quot;，而不是&quot;bar again&quot;。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123;asyncConnect, colaReducer, store&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola'</span>).Decorators.view;</div><div class="line">@asyncConnect([</div><div class="line">  &#123;</div><div class="line">    key: <span class="string">'foo'</span>,</div><div class="line">    promise: <span class="keyword">async</span> (&#123; params, helpers, <span class="attr">store</span>: &#123; dispatch &#125; &#125;) =&gt; &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">await</span> <span class="built_in">Promise</span>.resolve(<span class="string">'bar'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">], <span class="comment">// mapStateToProps</span></div><div class="line">(&#123; fooState &#125;) =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        foo : fooState</div><div class="line">    &#125;;</div><div class="line">&#125;, dispatch =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        changeFoo: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">            dispatch(&#123;</div><div class="line">                type: <span class="string">'CHANGE_FOO'</span></div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;)</div><div class="line">@colaReducer(&#123;</div><div class="line">    fooState : <span class="function">(<span class="params">state = <span class="string">''</span>, action</span>) =&gt;</span> &#123;</div><div class="line">        <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="string">'CHANGE_FOO'</span>:</div><div class="line">                <span class="keyword">return</span> <span class="string">'bar again'</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">return</span> state;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Some_Page</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;</div><div class="line">        &#123;this.props.foo&#125;</div><div class="line">        &lt;button onClick=&#123;() =&gt; this.props.changeFoo()&#125;&gt;change foo&lt;/button&gt;</div><div class="line">    &lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Some_Page;</div></pre></td></tr></table></figure>
-<p>如果必须要修改props.foo，可以使用下面的方法。</p>
+      <h2>About the props key name conflicts between <code>Cola</code> and <code>mapStateToProps</code></h2>
+<p>Using <code>Cola</code> decorators for data initialization, it's better to use the different key name of <code>initData</code> and <code>mapStateToProps</code>.<br>
+If the key name in <code>initData</code> conflicts with the name defined in <code>mapStateToProps</code> , data in <code>initData</code> will be prior than <code>mapStateToProps</code>.</p>
+<p>The following example defines the data <code>foo</code>, and <code>mapStateToProps</code> also defines <code>foo</code>. and execute <code>dispatch</code> to change <code>foo</code> value to <code>bar again</code>, but as we had set <code>foo</code> in the <code>initData</code>, the dispatching action will not work, <code>foo</code> value will still be <code>bar</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123;Cola, store&#125; = <span class="built_in">require</span>(<span class="string">'koa-cola/client'</span>);</div><div class="line">@Cola(&#123;</div><div class="line">    initData : &#123;</div><div class="line">        foo : <span class="keyword">async</span> (&#123; params, helpers, <span class="attr">store</span>: &#123; dispatch &#125; &#125;) =&gt; &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">await</span> <span class="built_in">Promise</span>.resolve(<span class="string">'bar'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    mapStateToProps : <span class="function">(<span class="params">&#123; fooState &#125;</span>) =&gt;</span> &#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            foo : fooState</div><div class="line">        &#125;;</div><div class="line">    &#125;,</div><div class="line">    mapDispatchToProps : <span class="function"><span class="params">dispatch</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            changeFoo: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">                dispatch(&#123;</div><div class="line">                    type: <span class="string">'CHANGE_FOO'</span></div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125;,</div><div class="line">    reducer : &#123;</div><div class="line">        fooState : <span class="function">(<span class="params">state = <span class="string">''</span>, action</span>) =&gt;</span> &#123;</div><div class="line">            <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">                <span class="keyword">case</span> <span class="string">'CHANGE_FOO'</span>:</div><div class="line">                    <span class="keyword">return</span> <span class="string">'bar again'</span>;</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    <span class="keyword">return</span> state;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Some_Page</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props: Props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;</div><div class="line">        &#123;this.props.foo&#125;</div><div class="line">        &lt;button onClick=&#123;() =&gt; this.props.changeFoo()&#125;&gt;change foo&lt;/button&gt;</div><div class="line">    &lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Some_Page;</div></pre></td></tr></table></figure>
+<p>If you still want to change <code>props.foo</code>, you can use <code>dispatch(loadSuccess(...));</code> :</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> loadSuccess = store.loadSuccess;</div><div class="line">...</div><div class="line">...</div><div class="line">changeFoo: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    dispatch(loadSuccess(<span class="string">'foo'</span>, <span class="string">'bar again'</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
     </div>
   </div>
   <div class='switch-page'>
     
-      <a class='previous' href='/doc/tip1-react-init.html'>Previous</a>
+      <a class='previous' href='/tip1-react-init.html'>Previous</a>
     
     
-      <a class='next' href='/doc/tip3-inject-global.html'>Next</a>
+      <a class='next' href='/tip3-inject-global.html'>Next</a>
     
   </div>
 </body>

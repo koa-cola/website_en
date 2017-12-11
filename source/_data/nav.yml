@@ -7,7 +7,7 @@
   - id: compare-next
     title: Compare with next.js
   - id: universal
-    title: Universal developing
+    title: Universal
   - id: d-mvc
     title: MVC pattern with decorator
 - title: Overview
