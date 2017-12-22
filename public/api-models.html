@@ -218,7 +218,7 @@
           top: -60px;
           position: relative;
           margin-right: 10px;
-      "><a href="https://github.com/koa-cola/website/blob/master/source/api-models.md">修改</a></div>
+      "><a href="https://github.com/koa-cola/website_en/blob/master/source/api-models.md">Edit</a></div>
       <p>The folder that place the model layer. We can get the model by using <code>app.models.todos</code> at run time. any ORM or ODM model library is supported, as long as export the object.</p>
 <p>For example, use mongoose：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;model&#125; <span class="keyword">from</span> <span class="string">'mongoose-decorators'</span>;</div><div class="line"><span class="keyword">const</span> todoSchema = <span class="keyword">new</span> app.mongoose.Schema(&#123;</div><div class="line">    name : <span class="built_in">String</span>,</div><div class="line">    completed : <span class="built_in">Boolean</span></div><div class="line">&#125;)</div><div class="line">@model(todoSchema)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">todos</span> </span>&#123;&#125;</div></pre></td></tr></table></figure>

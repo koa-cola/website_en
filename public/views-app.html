@@ -218,7 +218,7 @@
           top: -60px;
           position: relative;
           margin-right: 10px;
-      "><a href="https://github.com/koa-cola/website/blob/master/source/views-app.md">修改</a></div>
+      "><a href="https://github.com/koa-cola/website_en/blob/master/source/views-app.md">Edit</a></div>
       <p>views/app.tsx is the entry file of webpack building, you can maintain the file if needed, and in this case it is better to use another file as the entry file, because if you run <code>koa-cola build</code> or <code>koa-cola dev</code>, will override the file.</p>
 <p>custom your own webpack entry file with store provided like:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> store = ...</div><div class="line">&lt;Provider store=&#123;store&#125; key=<span class="string">"provider"</span>&gt;</div><div class="line">    &lt;Router history=&#123;browserHistory&#125;&gt;</div><div class="line">        &lt;Route ... /&gt;</div><div class="line">    &lt;<span class="regexp">/Router&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>Provider&gt;</div></pre></td></tr></table></figure>

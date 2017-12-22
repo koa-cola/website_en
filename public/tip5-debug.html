@@ -218,13 +218,13 @@
           top: -60px;
           position: relative;
           margin-right: 10px;
-      "><a href="https://github.com/koa-cola/website/blob/master/source/tip5-debug.md">修改</a></div>
+      "><a href="https://github.com/koa-cola/website_en/blob/master/source/tip5-debug.md">Edit</a></div>
       <p>When debugging a koa-cola project, we need to add two dependencies:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i ts-node typescript -S</div></pre></td></tr></table></figure>
 <p>and add debug config in vscode:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"DebugApp"</span>,</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"node"</span>,</div><div class="line">    <span class="attr">"request"</span>: <span class="string">"launch"</span>,</div><div class="line">    <span class="attr">"program"</span>: <span class="string">"$&#123;workspaceRoot&#125;/node_modules/ts-node/dist/_bin.js"</span>,</div><div class="line">    <span class="attr">"stopOnEntry"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"args"</span>: [],</div><div class="line">    <span class="attr">"runtimeArgs"</span>: [</div><div class="line">        <span class="string">"-r"</span>, <span class="string">"ts-node/register"</span>,</div><div class="line">        <span class="string">"$&#123;workspaceRoot&#125;/app.ts"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"sourceMaps"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"console"</span>: <span class="string">"internalConsole"</span>,</div><div class="line">    <span class="attr">"internalConsoleOptions"</span>: <span class="string">"openOnSessionStart"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>另外，koa-cola加了redux调试支持，你也可以使用chrome的redux插件调试： --&gt;<br>
-Then we can debug ts file via vscode.</p>
+<!-- 便可享受vscode的调试ts的乐趣。另外，koa-cola加了redux调试支持，你也可以使用chrome的redux插件调试： -->
+Then we can debug ts via vscode.
 <p>In addition, koa-cola integrate redux debug tool, we can use the chrome's redux plug-in:</p>
 <p><img src="https://github.com/hcnode/koa-cola/raw/master/screenshots/dev-tool.png" alt="Drawing" width="600"></p>
 

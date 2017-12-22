@@ -218,7 +218,7 @@
           top: -60px;
           position: relative;
           margin-right: 10px;
-      "><a href="https://github.com/koa-cola/website/blob/master/source/api-responses.md">修改</a></div>
+      "><a href="https://github.com/koa-cola/website_en/blob/master/source/api-responses.md">Edit</a></div>
       <p>pre-define the format of router return.</p>
 <p>for example return json contain code 200 and result：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Ok</span>(<span class="params">ctx, data</span>)</span>&#123;</div><div class="line">  ctx.status = <span class="number">200</span>;</div><div class="line">  ctx.body = &#123;</div><div class="line">      code : <span class="number">200</span>,</div><div class="line">      result : data</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

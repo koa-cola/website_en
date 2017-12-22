@@ -62,7 +62,6 @@ export default function Ok(ctx : Koa.Context, data){
 
 ### View
 
-<!-- page的view组件可以使用不同类型的react组件： -->
 Page's view components can use different types of react components
 
 * `React.Component` component
@@ -109,10 +108,8 @@ Page's view components can use different types of react components
 ```
 
 #### Cola decorator component
-<!-- 使用Cola装饰器来封装基于react-redux的组件 -->
 Use Cola decorators to create react-redux base components.
 
-<!-- 如果有子组件也是使用Cola 装饰器封装，则需要使用装饰器`include` -->
 If there's children components also created with `Cola` decorator, you need to use `include` decorator to include them:
 
 ```javascript
@@ -155,7 +152,6 @@ export default ColastyleDemo;
 
 #### Custom header & bundle packing
 
-<!-- koa-cola 渲染页面时，默认会找`views/pages/layout.ts`封装页面的 html，如果没有这个`layout`文件，则直接输出 page 组件返回的 html，如果 view 组件使用了`doNotUseLayout` 装饰器，则页面不会使用`layout.ts`输出，这时你可以自定义`header`和`bundle`装饰器。 -->
 When koa-cola render view in server side, it will be looking for `views/pages/layout.ts` as the page layout.
 if `layout.ts` file does not exist, the view component will render directly.
 If the view component uses the `doNotUseLayout` decorator, the page will not use `layout.ts`, and you probably need `header` and `bundle` decorators to define header and resource.
@@ -182,7 +178,6 @@ export default Page
 ```
 
 ### Model
-<!-- #### 你可以直接在目录 api/models 下创建如 user.ts： -->
 #### create "user.ts" directly under the directory "api/models"
 
 ```javascript
@@ -200,7 +195,6 @@ const user = await app.models.user.find({name : 'harry'})
 
 #### koa-cola style to write the model
 
-<!-- 首先在`api/schemas`目录创建`user.ts` -->
 First create schema `user.ts` in the `api/schemas` directory:
 
 ```javascript
@@ -216,7 +210,6 @@ export const userSchema = function(mongoose){
 }
 ```
 
-<!-- 在目录`api/models`下创建 model 如`user.ts`： -->
 Create a model `user.ts` in `api/models`:
 
 ```javascript
@@ -225,7 +218,6 @@ import userSchema from '../schemas/user'
 export default mongoose.model('user', new mongoose.Schema(userSchema(mongoose)))
 ```
 
-<!-- 当然也可以使用 decorator 方式定义 model，还可以定义相关hook，详情可以参考[mongoose-decorators](https://github.com/aksyonov/mongoose-decorators) -->
 Use decorator to define model also works well, we can define the relevant hook if needeed. More details can visit [mongoose-decorators](https://github.com/aksyonov/mongoose-decorators)
 
 ```javascript
@@ -236,13 +228,10 @@ const { model } = app.decorators.model;
 export default class TodoList {}
 ```
 
-<!-- 使用 cli 生成 model 的 schema -->
 Generate model's schema using cli
 
-<!-- `koa-cola --schema` 自动生成model的接口定义在`typings/schema.ts` -->
 `koa-cola schema` will automatically generate model interface in `typings/schema.ts`.
 
-<!-- 然后你可以在代码通过使用 typescript 的类型定义，享受 vscode 的 intellisense 带来的便捷 -->
 Then you can enjoy the convenience of vscode's intellisense by defining the types of typescript in your code.
 
 ```javascript
@@ -250,10 +239,8 @@ import {userSchema} from './typings/schema'
 const user : userSchema = await app.models.user.find({name : 'harry'})
 ```
 
-<!-- 在前面提到的为何需要在`api/schemas`定义 model 的 schema，除了上面的自动生成 schema 接口，还可以在浏览器端代码复用，比如数据Validate。详细可以查看[文档](http://mongoosejs.com/docs/browser.html) -->
 As mentioned earlier, the reason we need to define the model schema in `api/schemas`, in addition to generate schema interface, you can use the schema in both browser and server side. more detail you can visit [document](http://mongoosejs.com/docs/browser.html)
 
-<!-- #### koa-cola提供了前后端universal的api接口定义，比如todolist demo的获取数据的接口定义 -->
 #### koa-cola provides universal api interface definitions for both front and back end, such as `GetTodoList` api definition in the todolist demo:
 
 ```javascript
@@ -280,7 +267,6 @@ export class GetTodoList extends ApiBase<
 }
 ```
 
-<!-- 在代码里面使用 api，并享受 ts 带来的便捷： -->
 Use api in the code, and get the convenience provided by ts:
 
 ```javascript
