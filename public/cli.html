@@ -232,11 +232,11 @@
 <p>To start as development mode, build webpack bundle, launch project, and watch files automatically:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run dev</div></pre></td></tr></table></figure>
 <h3>build bundle</h3>
-<p>To run a build command:</p>
+<p>To run a watch command:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run watch</div></pre></td></tr></table></figure>
-<p>the build action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.</p>
+<p>the watch action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.</p>
 <p><strong>Note: This will overwrite your <code>view/app.tsx</code></strong></p>
-<p>If you want a 'homemade' <code>app.tsx</code> , you need to run the <code>webpack</code> command instead of <code>koa-cola build</code>.</p>
+<p>If you want a 'homemade' <code>app.tsx</code> , you need to run the <code>webpack</code> command instead of <code>koa-cola watch</code>.</p>
 <h3>Create model schema file</h3>
 <p>Run <code>koa-cola schema</code> or <code>koa-cola s</code> to create definition of model schema inside <code>api/schenmas</code>.<br>
 file will save as <code>typings/schema.ts</code>.</p>

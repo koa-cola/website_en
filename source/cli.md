@@ -34,15 +34,15 @@ npm run dev
 
 ### build bundle
 
-To run a build command:
+To run a watch command:
 ```shell
 npm run watch
 ```
-the build action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.
+the watch action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.
 
 **Note: This will overwrite your `view/app.tsx`**
 
-If you want a 'homemade' `app.tsx` , you need to run the `webpack` command instead of `koa-cola build`.
+If you want a 'homemade' `app.tsx` , you need to run the `webpack` command instead of `koa-cola watch`.
 
 ### Create model schema file
 
