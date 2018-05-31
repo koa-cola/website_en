@@ -26,9 +26,8 @@ export default class extends React.Component {
 }
 ```
 
-koa-cola provide two ways to fetch data.
+koa-cola use Cola decorator to fetch data:
 
-1. use Cola decorator to fetch data:
 ```javascript
 import React from 'react'
 var { Cola } = require('koa-cola/client');
@@ -46,26 +45,6 @@ export default class extends React.Component {
       Hello World {this.props.userAgent}
     </div>
   }
-}
-```
-
-2. fetch data in server router
-```javascript
-// in controller
-@Controller('') 
-class FooController {
-    @Get('/some_page')  
-    @View('some_page') 
-    some_page (@Ctx() ctx) { 
-      return userAgent: ctx.req.headers['user-agent']
-    }
-}
-
-// in page
-export default function({ ctrl : {userAgent} }) {
-  return <div>
-    Hello World {userAgent}
-  </div>
 }
 ```
 

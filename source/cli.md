@@ -24,19 +24,19 @@ the project will install dependencies, build bundle, and launch the app automati
 
 To launch the project:
  ```shell
- koa-cola
+ npm run local
  ```
 
 To start as development mode, build webpack bundle, launch project, and watch files automatically:
 ```shell
-koa-cola dev
+npm run dev
 ```
 
 ### build bundle
 
 To run a build command:
 ```shell
-koa-cola build
+npm run watch
 ```
 the build action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.
 

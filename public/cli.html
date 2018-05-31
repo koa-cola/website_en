@@ -21,7 +21,7 @@
 <body>
   <div class='menu'>
     <div class='logo'>
-      <a href="https://www.github.com/hcnode/koa-cola"><img src="/doc/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
+      <a href="https://www.github.com/hcnode/koa-cola"><img src="/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
     </div>
     <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
       
@@ -228,12 +228,12 @@
 <p>the project will install dependencies, build bundle, and launch the app automatically.</p>
 <h3>launch App</h3>
 <p>To launch the project:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola</div></pre></td></tr></table></figure>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run local</div></pre></td></tr></table></figure>
 <p>To start as development mode, build webpack bundle, launch project, and watch files automatically:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola dev</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run dev</div></pre></td></tr></table></figure>
 <h3>build bundle</h3>
 <p>To run a build command:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">koa-cola build</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run watch</div></pre></td></tr></table></figure>
 <p>the build action will find the controllers, and through which to find the views, finally create Provider of redux by these views and reducer of them. This Provider is the entry of the webapck build js bundle.</p>
 <p><strong>Note: This will overwrite your <code>view/app.tsx</code></strong></p>
 <p>If you want a 'homemade' <code>app.tsx</code> , you need to run the <code>webpack</code> command instead of <code>koa-cola build</code>.</p>

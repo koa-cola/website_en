@@ -21,7 +21,7 @@
 <body>
   <div class='menu'>
     <div class='logo'>
-      <a href="https://www.github.com/hcnode/koa-cola"><img src="/doc/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
+      <a href="https://www.github.com/hcnode/koa-cola"><img src="/images/github.png" width="25"></a>&nbsp;&nbsp;Koa-cola
     </div>
     <nav class='menu-nav' style="max-height: 87%;" onmouseover="this.style.overflowY='scroll'"  onmouseout="this.style.overflowY='hidden'">
       {% for section in site.data.nav %}

@@ -36,7 +36,6 @@ class FooController {
     some_page (@Ctx() ctx, @QueryParam() param : any) { // inject ctx & param
         // Initialize the data.
         // Data will be injected into react component's props, 
-        // we can call that data by: "this.props.ctrl.foo"
         return {
             foo : 'bar'
         }

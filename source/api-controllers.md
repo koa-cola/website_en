@@ -27,39 +27,6 @@ export default class {
 }
 ```
 
-## Controller in the page's view
-```javascript
-const { Controller, Get, View } = require('koa-cola/client');
-
-@Controller('')
-export default class {
-  @Get('/index')
-  @View('/index') // this route is a page depend on index page component
-  async index() {
-    return {
-        list : await app.models.todo.find({})
-    }
-  }
-}
-```
-
-index's page class (inside `views/pages` directory)
-
-```javascript
-import * as React from 'react';
-function Index({ctrl : {list}}){
-  return <div>
-    <ul>
-      {
-          list.map(item => <li>{item.name}</li>)
-      }
-    </ul>
-  </div>
-}
-```
-
-koa-cola provide other nice decorations.
-
 ### Return fixed data format by return of router
 
 ```javascript
